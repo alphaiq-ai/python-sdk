@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "alphaiq-sdk"
-version = "0.0.3"
+version = "0.1.0"
 description = "Access AlphaIQ quantitative linguistics SPINDEX risk scores"
 readme = "README.md"
 authors = [{ name = "AlphaIQ", email = "contact@alphaiq.ai" }]
