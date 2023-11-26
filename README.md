@@ -1,7 +1,11 @@
 # AlphaIQ Python SDK
 To get access to the API, [sign up here](https://alphaiq.ai).
 
-Welcome to the AlphaIQ API! We offer Quantitative Linguistic Risk Indicators that enable investors to uncover hidden risks in forward-looking statements from management. For a complete API request response.
+Welcome to the AlphaIQ API! We offer Quantitative Linguistic Risk Indicators that enable investors to uncover hidden risks in forward-looking statements from management.
+
+To learn more about AlphaIQ, [read about us](https://alphaiq.ai/about-faq).
+
+Review the [Privacy Policy](https://alphaiq.ai/privacy-policy/) and [Terms of Service](https://alphaiq.ai/terms-of-service/) on our website.
 
 ## Requirements
 
