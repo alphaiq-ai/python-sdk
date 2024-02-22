@@ -439,41 +439,74 @@ GetLatestSpindexOverallRisk
 
 ### Example
 
-* Bearer Authentication (bearer):
+This API allows the user to get the latest overall risk score for a company using the company's ticker. An example is shown below:
 ```python
-from __future__ import print_function
-import time
+import os
+
+from dotenv import load_dotenv
 import openapi_client
 from openapi_client.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
+
+# Load the environment variables from the .env file
+load_dotenv()
+
+EMAIL = os.getenv('EMAIL')
+PASSWORD = os.getenv('PASSWORD')
+
+# Define the API configuration, client object and API instance
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
+    host = 'https://data.app.alphaiq.ai/api/v1'
+    )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearer
-configuration = openapi_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+
+    # Make an instance of the API class
     api_instance = openapi_client.InvestmentResearchersApi(api_client)
-    ticker = 'GOOGL' # str | The ticker that corresponds to the company that you want to pull the latest overall risk score for.
+
+    # Define the values needed to authenticate to the API
+    content_type = 'application/json' # str | 
+    inline_object = openapi_client.InlineObject(
+        email = EMAIL,
+        password = PASSWORD
+    )
 
     try:
-        # GetLatestSpindexOverallRisk
-        api_response = api_instance.company_spindex_get_latest_spindex_overall_risk_get(ticker)
-        pprint(api_response)
+
+        # Authenticate using your credentials
+        api_response = api_instance.auth_gettoken_post(
+            content_type = content_type,
+            inline_object=inline_object
+            )
+
     except ApiException as e:
-        print("Exception when calling InvestmentResearchersApi->company_spindex_get_latest_spindex_overall_risk_get: %s\n" % e)
+
+        # Log an exception if it occurs
+        print("Exception when calling the API: %s\n" % e)
+
+    # Extract your bearer token for authentication to other API paths
+    id_token = api_response.data.id_token
+
+    # Add the bearer token to the configuration for authenticating other routes
+    setattr(configuration, 'access_token', id_token)
+
+with openapi_client.ApiClient(configuration) as api_client:
+
+    # Make an instance of the API class
+    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    ticker = 'TSLA' 
+
+    try:
+        # Get the latest overall risk score from the API
+        api_response = api_instance.company_spindex_get_latest_spindex_overall_risk_get(
+            ticker=ticker
+            )
+        print(api_response)
+
+    except ApiException as e:
+
+        # Log an exception if it occurs
+        print("Exception when calling the API: %s\n" % e)
+
 ```
 
 ### Parameters
