@@ -81,7 +81,7 @@ PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
 configuration = openapi_client.Configuration(
-    host = 'https://eofipoxzab.execute-api.us-east-1.amazonaws.com/v1'
+    host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
 api_client = openapi_client.ApiClient(configuration)

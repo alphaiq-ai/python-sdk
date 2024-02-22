@@ -11,13 +11,14 @@ Method | HTTP request | Description
 [**company_spindex_get_latest_spindex_overall_risk_get**](InvestmentResearchersApi.md#company_spindex_get_latest_spindex_overall_risk_get) | **GET** /company-spindex/getLatestSpindexOverallRisk | GetLatestSpindexOverallRisk
 [**company_spindex_get_timeseries_spindex_factors_get**](InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_factors_get) | **GET** /company-spindex/getTimeseriesSpindexFactors | GetTimeseriesSpindexFactors
 [**company_spindex_get_timeseries_spindex_overall_risk_get**](InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_overall_risk_get) | **GET** /company-spindex/getTimeseriesSpindexOverallRisk | GetTimeseriesSpindexOverallRisk
+[**company_spinsights_report_ticker_get**](InvestmentResearchersApi.md#company_spinsights_report_ticker_get) | **GET** /company/spinsights/report/{ticker} | SpinsightsReportPDF
 [**factor_library_compass_questions_get**](InvestmentResearchersApi.md#factor_library_compass_questions_get) | **GET** /factor-library/compass-questions | GetCompassQuestions
 [**factor_library_spindex_factors_get**](InvestmentResearchersApi.md#factor_library_spindex_factors_get) | **GET** /factor-library/spindex-factors | GetSpindexFactors
 [**generative_company_compass_report_content_ticker_get**](InvestmentResearchersApi.md#generative_company_compass_report_content_ticker_get) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
 [**generative_company_question_answer_ticker_get**](InvestmentResearchersApi.md#generative_company_question_answer_ticker_get) | **GET** /generative/company/questionAnswer/{ticker} | GetCompassExplorerQuestionAnswer
 [**generative_company_spinsights_explorer_ticker_get**](InvestmentResearchersApi.md#generative_company_spinsights_explorer_ticker_get) | **GET** /generative/company/spinsights/explorer/{ticker} | GetSpinsightsExplorer
 [**generative_company_spinsights_report_content_ticker_get**](InvestmentResearchersApi.md#generative_company_spinsights_report_content_ticker_get) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
-
+[**company_compass_report_ticker_get**](InvestmentResearchersApi.md#company_compass_report_ticker_get) | **GET** /company/compass/report/{ticker} | CompassReportPDF
 
 # **auth_gettoken_post**
 > InlineResponse200 auth_gettoken_post(content_type, inline_object=inline_object)
@@ -92,6 +93,109 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **company_compass_report_ticker_get**
+> InlineResponse200 company_compass_report_ticker_get(ticker)
+
+CompassReportPDF
+
+Get pre-signed URL for a company's generative COMPASS PDF report
+
+### Example
+
+This API allows the user to retrieve a download link for the COMPASS PDF report for a company. An example is provided below:
+```python
+import os
+
+from dotenv import load_dotenv
+import openapi_client
+from openapi_client.rest import ApiException
+
+# Load the environment variables from the .env file
+load_dotenv()
+
+EMAIL = os.getenv('EMAIL')
+PASSWORD = os.getenv('PASSWORD')
+
+# Define the API configuration, client object and API instance
+configuration = openapi_client.Configuration(
+    host = 'https://data.app.alphaiq.ai/api/v1'
+    )
+
+with openapi_client.ApiClient(configuration) as api_client:
+
+    # Make an instance of the API class
+    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+
+    # Define the values needed to authenticate to the API
+    content_type = 'application/json' # str | 
+    inline_object = openapi_client.InlineObject(
+        email = EMAIL,
+        password = PASSWORD
+    )
+
+    try:
+
+        # Authenticate using your credentials
+        api_response = api_instance.auth_gettoken_post(
+            content_type = content_type,
+            inline_object=inline_object
+            )
+
+    except ApiException as e:
+
+        # Log an exception if it occurs
+        print("Exception when calling the API: %s\n" % e)
+
+    # Extract your bearer token for authentication to other API paths
+    id_token = api_response.data.id_token
+
+    # Add the bearer token to the configuration for authenticating other routes
+    setattr(configuration, 'access_token', id_token)
+
+with openapi_client.ApiClient(configuration) as api_client:
+
+    # Make an instance of the API class
+    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    ticker = 'TSLA' 
+
+    try:
+
+        # Query the API to get a link to the CompassReportPDF for a given company
+        api_response = api_instance.company_compass_report_ticker_get(
+            ticker=ticker
+            )
+        print(api_response)
+
+    except ApiException as e:
+
+        # Log an exception if it occurs
+        print("Exception when calling the API: %s\n" % e)
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticker** | **str**| Ticker identifier corresponding to a security or company | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**404** | InsufficientPermissions |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -622,6 +726,109 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **company_spinsights_report_ticker_get**
+> InlineResponse20020 company_spinsights_report_ticker_get(ticker)
+
+SpinsightsReportPDF
+
+Get pre-signed URL for a company's generative SPINSIGHTS PDF report
+
+### Example
+
+This API allows the user to retrieve a download link for the SPINSIGHTS PDF report for a company. An example is provided below:
+```python
+import os
+
+from dotenv import load_dotenv
+import openapi_client
+from openapi_client.rest import ApiException
+
+# Load the environment variables from the .env file
+load_dotenv()
+
+EMAIL = os.getenv('EMAIL')
+PASSWORD = os.getenv('PASSWORD')
+
+# Define the API configuration, client object and API instance
+configuration = openapi_client.Configuration(
+    host = 'https://data.app.alphaiq.ai/api/v1'
+    )
+
+with openapi_client.ApiClient(configuration) as api_client:
+
+    # Make an instance of the API class
+    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+
+    # Define the values needed to authenticate to the API
+    content_type = 'application/json' # str | 
+    inline_object = openapi_client.InlineObject(
+        email = EMAIL,
+        password = PASSWORD
+    )
+
+    try:
+
+        # Authenticate using your credentials
+        api_response = api_instance.auth_gettoken_post(
+            content_type = content_type,
+            inline_object=inline_object
+            )
+
+    except ApiException as e:
+
+        # Log an exception if it occurs
+        print("Exception when calling the API: %s\n" % e)
+
+    # Extract your bearer token for authentication to other API paths
+    id_token = api_response.data.id_token
+
+    # Add the bearer token to the configuration for authenticating other routes
+    setattr(configuration, 'access_token', id_token)
+
+with openapi_client.ApiClient(configuration) as api_client:
+
+    # Make an instance of the API class
+    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    ticker = 'TSLA' 
+
+    try:
+
+        # Query the API to get a link to the SpinsightsReport PDF for a given company
+        api_response = api_instance.company_spinsights_report_ticker_get(
+            ticker=ticker
+            )
+        print(api_response)
+
+    except ApiException as e:
+
+        # Log an exception if it occurs
+        print("Exception when calling the API: %s\n" % e)
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticker** | **str**| Ticker identifier corresponding to a security or company | 
+
+### Return type
+
+[**InlineResponse20020**](InlineResponse20020.md)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**404** | InsufficientPermissions |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1239,79 +1446,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **company_compass_report_ticker_get**
-> InlineResponse200 company_compass_report_ticker_get(ticker)
-
-CompassReportPDF
-
-Get pre-signed URL for a company's generative COMPASS PDF report
-
-### Example
-
-* Bearer Authentication (bearer):
-```python
-from __future__ import print_function
-import time
-import openapi_client
-from openapi_client.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearer
-configuration = openapi_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
-    ticker = 'TSLA' # str | Ticker identifier corresponding to a security or company
-
-    try:
-        # CompassReportPDF
-        api_response = api_instance.company_compass_report_ticker_get(ticker)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling InvestmentResearchersApi->company_compass_report_ticker_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ticker** | **str**| Ticker identifier corresponding to a security or company | 
-
-### Return type
-
-[**InlineResponse200**](InlineResponse200.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**404** | InsufficientPermissions |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

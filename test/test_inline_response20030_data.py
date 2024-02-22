@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import openapi_client
-from openapi_client.models.inline_response200 import InlineResponse200  # noqa: E501
+from openapi_client.models.inline_response20030_data import InlineResponse20030Data  # noqa: E501
 from openapi_client.rest import ApiException
 
-class TestInlineResponse200(unittest.TestCase):
-    """InlineResponse200 unit test stubs"""
+class TestInlineResponse20030Data(unittest.TestCase):
+    """InlineResponse20030Data unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,24 +29,24 @@ class TestInlineResponse200(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test InlineResponse200
+        """Test InlineResponse20030Data
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response200.InlineResponse200()  # noqa: E501
+        # model = openapi_client.models.inline_response20030_data.InlineResponse20030Data()  # noqa: E501
         if include_optional :
-            return InlineResponse200(
-                data = openapi_client.models.inline_response_200_data.inline_response_200_data(
-                    url = '0', )
+            return InlineResponse20030Data(
+                date = '0', 
+                ticker = '0', 
+                signal_id = '0', 
+                signal_value = 56
             )
         else :
-            return InlineResponse200(
-                data = openapi_client.models.inline_response_200_data.inline_response_200_data(
-                    url = '0', ),
+            return InlineResponse20030Data(
         )
 
-    def testInlineResponse200(self):
-        """Test InlineResponse200"""
+    def testInlineResponse20030Data(self):
+        """Test InlineResponse20030Data"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

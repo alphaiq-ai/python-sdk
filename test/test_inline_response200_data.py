@@ -36,21 +36,11 @@ class TestInlineResponse200Data(unittest.TestCase):
         # model = openapi_client.models.inline_response200_data.InlineResponse200Data()  # noqa: E501
         if include_optional :
             return InlineResponse200Data(
-                access_token = '0', 
-                challenge_parameters = None, 
-                id_token = '0', 
-                refresh_token = '0', 
-                token_type = '0', 
-                expires_in = 56
+                url = '0'
             )
         else :
             return InlineResponse200Data(
-                access_token = '0',
-                challenge_parameters = None,
-                id_token = '0',
-                refresh_token = '0',
-                token_type = '0',
-                expires_in = 56,
+                url = '0',
         )
 
     def testInlineResponse200Data(self):

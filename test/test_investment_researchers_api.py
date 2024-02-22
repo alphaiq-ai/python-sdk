@@ -28,94 +28,10 @@ class TestInvestmentResearchersApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_auth_gettoken_post(self):
-        """Test case for auth_gettoken_post
+    def test_company_compass_report_ticker_get(self):
+        """Test case for company_compass_report_ticker_get
 
-        GetToken  # noqa: E501
-        """
-        pass
-
-    def test_auth_refreshtoken_post(self):
-        """Test case for auth_refreshtoken_post
-
-        RefreshToken  # noqa: E501
-        """
-        pass
-
-    def test_company_mapping_company_to_security_get(self):
-        """Test case for company_mapping_company_to_security_get
-
-        CompanyToSecurity  # noqa: E501
-        """
-        pass
-
-    def test_company_spindex_get_latest_spindex_factors_get(self):
-        """Test case for company_spindex_get_latest_spindex_factors_get
-
-        GetLatestSpindexFactors  # noqa: E501
-        """
-        pass
-
-    def test_company_spindex_get_latest_spindex_overall_risk_get(self):
-        """Test case for company_spindex_get_latest_spindex_overall_risk_get
-
-        GetLatestSpindexOverallRisk  # noqa: E501
-        """
-        pass
-
-    def test_company_spindex_get_timeseries_spindex_factors_get(self):
-        """Test case for company_spindex_get_timeseries_spindex_factors_get
-
-        GetTimeseriesSpindexFactors  # noqa: E501
-        """
-        pass
-
-    def test_company_spindex_get_timeseries_spindex_overall_risk_get(self):
-        """Test case for company_spindex_get_timeseries_spindex_overall_risk_get
-
-        GetTimeseriesSpindexOverallRisk  # noqa: E501
-        """
-        pass
-
-    def test_factor_library_compass_questions_get(self):
-        """Test case for factor_library_compass_questions_get
-
-        GetCompassQuestions  # noqa: E501
-        """
-        pass
-
-    def test_factor_library_spindex_factors_get(self):
-        """Test case for factor_library_spindex_factors_get
-
-        GetSpindexFactors  # noqa: E501
-        """
-        pass
-
-    def test_generative_company_compass_report_content_ticker_get(self):
-        """Test case for generative_company_compass_report_content_ticker_get
-
-        GetCompassReportContent  # noqa: E501
-        """
-        pass
-
-    def test_generative_company_question_answer_ticker_get(self):
-        """Test case for generative_company_question_answer_ticker_get
-
-        GetCompassExplorerQuestionAnswer  # noqa: E501
-        """
-        pass
-
-    def test_generative_company_spinsights_explorer_ticker_get(self):
-        """Test case for generative_company_spinsights_explorer_ticker_get
-
-        GetSpinsightsExplorer  # noqa: E501
-        """
-        pass
-
-    def test_generative_company_spinsights_report_content_ticker_get(self):
-        """Test case for generative_company_spinsights_report_content_ticker_get
-
-        GetSpinsightsReportContent  # noqa: E501
+        CompassReportPDF  # noqa: E501
         """
         pass
 
