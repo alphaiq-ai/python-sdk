@@ -72,6 +72,7 @@ import os
 
 from dotenv import load_dotenv
 import openapi_client
+from openapi_client.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -84,26 +85,36 @@ configuration = openapi_client.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-api_client = openapi_client.ApiClient(configuration)
+with openapi_client.ApiClient(configuration) as api_client:
 
-auth_api_instance = openapi_client.AlphaiqWebsiteAuthApi(api_client)
+    # Make an instance of the API class
+    api_instance = openapi_client.InvestmentResearchersApi(api_client)
 
-# Define the values needed to authenticate to the API
-content_type = 'application/json' # str | 
-inline_object = openapi_client.InlineObject(
-    email = EMAIL,
-    password = PASSWORD
-)
-
-# Authenticate using your credentials
-auth_response = auth_api_instance.auth_gettoken_post(
-    content_type = content_type,
-    inline_object=inline_object
+    # Define the values needed to authenticate to the API
+    content_type = 'application/json' # str | 
+    inline_object = openapi_client.InlineObject(
+        email = EMAIL,
+        password = PASSWORD
     )
 
-# Extract your bearer token for authentication to other API paths
-id_token = auth_response.data.id_token
+    try:
 
+        # Authenticate using your credentials
+        api_response = api_instance.auth_gettoken_post(
+            content_type = content_type,
+            inline_object=inline_object
+            )
+
+    except ApiException as e:
+
+        # Log an exception if it occurs
+        print("Exception when calling the API: %s\n" % e)
+
+    # Extract your bearer token for authentication to other API paths
+    id_token = api_response.data.id_token
+
+    # Add the bearer token to the configuration for authenticating other routes
+    setattr(configuration, 'access_token', id_token)
 ```
 
 ## Documentation for API Endpoints
@@ -113,12 +124,13 @@ All URIs are relative to *https://data.app.alphaiq.ai/api/v1*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *InvestmentResearchersApi* | [**auth_gettoken_post**](docs/InvestmentResearchersApi.md#auth_gettoken_post) | **POST** /auth/gettoken | GetToken
-*InvestmentResearchersApi* | [**auth_refreshtoken_post**](docs/InvestmentResearchersApi.md#auth_refreshtoken_post) | **POST** /auth/refreshtoken | RefreshToken
+*InvestmentResearchersApi* | [**company_compass_report_ticker_get**](docs/InvestmentResearchersApi.md#company_compass_report_ticker_get) | **GET** /company/compass/report/{ticker} | CompassReportPDF
 *InvestmentResearchersApi* | [**company_mapping_company_to_security_get**](docs/InvestmentResearchersApi.md#company_mapping_company_to_security_get) | **GET** /company-mapping/company-to-security | CompanyToSecurity
 *InvestmentResearchersApi* | [**company_spindex_get_latest_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_factors_get) | **GET** /company-spindex/getLatestSpindexFactors | GetLatestSpindexFactors
 *InvestmentResearchersApi* | [**company_spindex_get_latest_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_overall_risk_get) | **GET** /company-spindex/getLatestSpindexOverallRisk | GetLatestSpindexOverallRisk
 *InvestmentResearchersApi* | [**company_spindex_get_timeseries_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_factors_get) | **GET** /company-spindex/getTimeseriesSpindexFactors | GetTimeseriesSpindexFactors
 *InvestmentResearchersApi* | [**company_spindex_get_timeseries_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_overall_risk_get) | **GET** /company-spindex/getTimeseriesSpindexOverallRisk | GetTimeseriesSpindexOverallRisk
+*InvestmentResearchersApi* | [**company_spinsights_report_ticker_get**](docs/InvestmentResearchersApi.md#company_spinsights_report_ticker_get) | **GET** /company/spinsights/report/{ticker} | SpinsightsReportPDF
 *InvestmentResearchersApi* | [**factor_library_compass_questions_get**](docs/InvestmentResearchersApi.md#factor_library_compass_questions_get) | **GET** /factor-library/compass-questions | GetCompassQuestions
 *InvestmentResearchersApi* | [**factor_library_spindex_factors_get**](docs/InvestmentResearchersApi.md#factor_library_spindex_factors_get) | **GET** /factor-library/spindex-factors | GetSpindexFactors
 *InvestmentResearchersApi* | [**generative_company_compass_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_compass_report_content_ticker_get) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
