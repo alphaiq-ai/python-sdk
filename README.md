@@ -7,91 +7,231 @@ To learn more about AlphaIQ, [read about us](https://alphaiq.ai/about-faq).
 
 Review the [Privacy Policy](https://alphaiq.ai/privacy-policy/) and [Terms of Service](https://alphaiq.ai/terms-of-service/) on our website.
 
-## Requirements
+# Installation
+## Requirements.
 
-Python >=3.7
+Python 2.7 and 3.4+
 
-## Installation
+## Installation via Pip
 
-```
+```sh
 pip install alphaiq-sdk
 ```
+
 Then import the package:
+
 ```python
-import alphaiq_sdk
+import alphaiq_sdk 
 ```
-## Installation from GitHub
-```
+
+## Installation via GitHub
+
+```sh
 pip install git+https://github.com/alphaiq-ai/python-sdk.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/alphaiq-ai/python-sdk.git`
+(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/alphaiq-ai/python-sdk.git`)
+
 Then import the package:
 ```python
 import alphaiq_sdk
 ```
-## SDK Code Examples
 
-A jupyter notebook and other code examples for the Alpha IQ SDK are available in our [Getting Started folder](alphaiq_sdk/get_started)
+## Installation via Setuptools
 
-## Getting Started
+Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
 
-Please follow the [installation instructions](#installation) and then run the following:
+```sh
+python setup.py install --user
+```
+(or `sudo python setup.py install` to install the package for all users)
+
+Then import the package:
+```python
+import openapi_client
+```
+
+# Getting Started
+
+It is advised to setup a ```.env``` file the store credentials. Documentation can be found [here](https://pypi.org/project/python-dotenv/). To use the ```.env``` file to store credentials, install the ```python-dotenv``` package with pip:
 
 ```python
-import alphaiq_sdk
+pip install python-dotenv
+```
 
-# Set user credentials
-email = 'bob.ross@gmail.com' #str | The email you signed up with AlphaIQ. To sign up for an account, go to our website: https://alphaiq.ai
-base64_password = 'AB23sdf34$=' #str | This is the password for your AlphaIQ account with Base64 encryption applied. Copy your password into this base64 encryption tool to get the encrypted version of your password: https://www.base64encode.org/
+An example of the contents of the ```.env``` file are shown below:
 
-# Retrieve user token    
-token_details = alphaiq_sdk.get_token(email, base64_password)
-token = token_details["data"]["IdToken"]
+```
+EMAIL=example@emaildomain.com
+PASSWORD=VGhpcyBpcyBteSBwYXNzd29yZCBlbmNvZGVkIHRvIEJhc2U2NCBmb3JtYXQ=
+```
 
-# Connect to the AlphaIQ client
-client = alphaiq_sdk.client(token)
+Please follow the [installation procedure](#installation) and then run the following to retrieve your bearer token for authentication to other API routes:
 
-# Get example data, a list of identifiers available to the users
-identifiers = client.get_identifiers()
-print(identifiers)
+```python
+import os
 
-# Get example summary information for a particular company, Godaddy Inc
-summary = client.get_identifier_details(identifier="Godaddy Inc (GDDY)")
-print(summary)
+from dotenv import load_dotenv
+import openapi_client
+from openapi_client.rest import ApiException
 
-# Get example list of high-risk companies
-companies = client.get_high_risk_companies_across_all_industries(view_change='1q')
-print(companies)
+# Load the environment variables from the .env file
+load_dotenv()
 
+EMAIL = os.getenv('EMAIL')
+PASSWORD = os.getenv('PASSWORD')
+
+# Define the API configuration, client object and API instance
+configuration = openapi_client.Configuration(
+    host = 'https://data.app.alphaiq.ai/api/v1'
+    )
+
+with openapi_client.ApiClient(configuration) as api_client:
+
+    # Make an instance of the API class
+    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+
+    # Define the values needed to authenticate to the API
+    content_type = 'application/json' # str | 
+    inline_object = openapi_client.InlineObject(
+        email = EMAIL,
+        password = PASSWORD
+    )
+
+    try:
+
+        # Authenticate using your credentials
+        api_response = api_instance.auth_gettoken_post(
+            content_type = content_type,
+            inline_object=inline_object
+            )
+
+    except ApiException as e:
+
+        # Log an exception if it occurs
+        print("Exception when calling the API: %s\n" % e)
+
+    # Extract your bearer token for authentication to other API paths
+    id_token = api_response.data.id_token
+
+    # Add the bearer token to the configuration for authenticating other routes
+    setattr(configuration, 'access_token', id_token)
 ```
 
 ## Documentation for API Endpoints
 
+All URIs are relative to *https://data.app.alphaiq.ai/api/v1*
 
-Method | Description | HTTP Request
---- | --- | ---
-gettoken | Get user token [requires email & base64 encrypted password] | POST/auth/gettoken
-get_identifiers()   | Get List of all identifiers | GET/identifiers
-search_identifier(query="Health")   | Query for any string | GET/identifiers/search?q={query}
-get_all_companies_name()   | Get all companies names | GET/identifiers/companies
-get_all_lvl4_industries_name()   | Get all lvl4_industries_names | GET/identifiers/industries
-get_high_risk_industries(view_change='recent')   | Get high risk industries [view_change can be either recent/1m/1q] | GET/identifiers/industries/highrisk/{view_change}
-get_low_risk_industries(view_change='1m')   | Get low risk industries [view_change can be either recent/1m/1q] | GET/identifiers/industries/lowrisk/{view_change}
-get_high_risk_companies_across_all_industries(view_change='recent')   | Get high risk companies across all industries [view_change can be either recent/1m/1q] | GET/identifiers/companies/highrisk/{view_change}
-get_high_risk_companies_of_particular_lvl2_industry(view_change='recent', lvl2_industry_name="Industrials")   | Get high risk companies of particular lvl2_industry | GET/identifiers/companies/highrisk/{view_change}?lvl2IndustryName={lvl2_industry_name}
-get_high_risk_companies_of_particular_lvl3_industry(view_change='recent', lvl3_industry_name="Software")   | Get high risk companies of particular lvl3_industry | GET/identifiers/companies/highrisk/{view_change}?lvl3IndustryName={lvl3_industry_name}
-get_high_risk_companies_of_particular_lvl4_industry(view_change='recent', lvl4_industry_name="Healthcare Insurance")   | Get high risk companies of particular lvl4_industry | GET/identifiers/companies/highrisk/{view_change}?lvl4IndustryName={lvl4_industry_name}
-get_low_risk_companies_across_all_industries(view_change='recent')   | Get low risk companies across all industries [view_change can be either recent/1m/1q] | GET/identifiers/companies/lowrisk/{view_change}
-get_low_risk_companies_of_particular_lvl2_industry(view_change='recent', lvl2_industry_name="Industrials")   | Get low risk companies of particular lvl2_industry | GET/identifiers/companies/lowrisk/{view_change}?lvl2IndustryName={lvl2_industry_name}
-get_low_risk_companies_of_particular_lvl3_industry(view_change='recent', lvl3_industry_name="Software")   | Get low risk companies of particular lvl3_industry | GET/identifiers/companies/lowrisk/{view_change}?lvl3IndustryName={lvl3_industry_name}
-get_low_risk_companies_of_particular_lvl4_industry(view_change='recent', lvl4_industry_name="Healthcare Insurance")   | Get low risk companies of particular lvl4_industry | GET/identifiers/companies/lowrisk/{view_change}?lvl4IndustryName={lvl4_industry_name}
-get_identifier_details(identifier="Metals")   | Get basic details about identifier | GET/identifiers/details/{identifier}
-get_identifier_latest_spindex_score(identifier="Godaddy Inc (GDDY)")   | Get latest SPINDEX score of identifier | GET/identifiers/scores/{identifier}
-get_company_latest_six_weeks_spindex_scores(company_name="Godaddy Inc (GDDY)"   | Get company 6 weeks SPINDEX score | GET/identifiers/company/{company_name}
-get_identifier_compared_scores(identifiers="Godaddy Inc (GDDY)")   | Get compared scores for identifier | GET/identifiers/comparedscore/{identifier}
-get_constituents_companies_with_latest_overallrisk(lvl4_industry_name="Metals")   | Get all companies with its current overallrisk for a particular lvl4_industry | GET/identifiers/industry/{lvl4_industry_name}
-get_identifier_timeseries_overallrisk(identifier="Metals")   | Get whole timeseries overallrisk of identifier and group average | GET/identifiers/timeseries/overallrisk/{identifier}
-get_industries_overview()   | Get overview of industry | GET/identifiers/industries/overview
-get_companies_overview()   | Get overview of company | GET/companies/overview
-get_all_level_industries_names()   | Get all level industries names | GET/industries/names
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*InvestmentResearchersApi* | [**auth_gettoken_post**](docs/InvestmentResearchersApi.md#auth_gettoken_post) | **POST** /auth/gettoken | GetToken
+*InvestmentResearchersApi* | [**company_compass_report_ticker_get**](docs/InvestmentResearchersApi.md#company_compass_report_ticker_get) | **GET** /company/compass/report/{ticker} | CompassReportPDF
+*InvestmentResearchersApi* | [**company_mapping_company_to_security_get**](docs/InvestmentResearchersApi.md#company_mapping_company_to_security_get) | **GET** /company-mapping/company-to-security | CompanyToSecurity
+*InvestmentResearchersApi* | [**company_spindex_get_latest_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_factors_get) | **GET** /company-spindex/getLatestSpindexFactors | GetLatestSpindexFactors
+*InvestmentResearchersApi* | [**company_spindex_get_latest_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_overall_risk_get) | **GET** /company-spindex/getLatestSpindexOverallRisk | GetLatestSpindexOverallRisk
+*InvestmentResearchersApi* | [**company_spindex_get_timeseries_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_factors_get) | **GET** /company-spindex/getTimeseriesSpindexFactors | GetTimeseriesSpindexFactors
+*InvestmentResearchersApi* | [**company_spindex_get_timeseries_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_overall_risk_get) | **GET** /company-spindex/getTimeseriesSpindexOverallRisk | GetTimeseriesSpindexOverallRisk
+*InvestmentResearchersApi* | [**company_spinsights_report_ticker_get**](docs/InvestmentResearchersApi.md#company_spinsights_report_ticker_get) | **GET** /company/spinsights/report/{ticker} | SpinsightsReportPDF
+*InvestmentResearchersApi* | [**factor_library_compass_questions_get**](docs/InvestmentResearchersApi.md#factor_library_compass_questions_get) | **GET** /factor-library/compass-questions | GetCompassQuestions
+*InvestmentResearchersApi* | [**factor_library_spindex_factors_get**](docs/InvestmentResearchersApi.md#factor_library_spindex_factors_get) | **GET** /factor-library/spindex-factors | GetSpindexFactors
+*InvestmentResearchersApi* | [**generative_company_compass_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_compass_report_content_ticker_get) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
+*InvestmentResearchersApi* | [**generative_company_question_answer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_question_answer_ticker_get) | **GET** /generative/company/questionAnswer/{ticker} | GetCompassExplorerQuestionAnswer
+*InvestmentResearchersApi* | [**generative_company_spinsights_explorer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_explorer_ticker_get) | **GET** /generative/company/spinsights/explorer/{ticker} | GetSpinsightsExplorer
+*InvestmentResearchersApi* | [**generative_company_spinsights_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_report_content_ticker_get) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
 
+
+## Documentation For Models
+
+ - [Category](docs/Category.md)
+ - [InlineObject](docs/InlineObject.md)
+ - [InlineObject1](docs/InlineObject1.md)
+ - [InlineObject2](docs/InlineObject2.md)
+ - [InlineObject3](docs/InlineObject3.md)
+ - [InlineObject4](docs/InlineObject4.md)
+ - [InlineResponse200](docs/InlineResponse200.md)
+ - [InlineResponse2001](docs/InlineResponse2001.md)
+ - [InlineResponse20010](docs/InlineResponse20010.md)
+ - [InlineResponse20010Data](docs/InlineResponse20010Data.md)
+ - [InlineResponse20011](docs/InlineResponse20011.md)
+ - [InlineResponse20011Data](docs/InlineResponse20011Data.md)
+ - [InlineResponse20011DataLvl2IndustriesWithLatestAvgOverallrisk](docs/InlineResponse20011DataLvl2IndustriesWithLatestAvgOverallrisk.md)
+ - [InlineResponse20011DataLvl3IndustriesWithLatestAvgOverallrisk](docs/InlineResponse20011DataLvl3IndustriesWithLatestAvgOverallrisk.md)
+ - [InlineResponse20012](docs/InlineResponse20012.md)
+ - [InlineResponse20012ConsumerProductsAndServices](docs/InlineResponse20012ConsumerProductsAndServices.md)
+ - [InlineResponse20012Data](docs/InlineResponse20012Data.md)
+ - [InlineResponse20012Energy](docs/InlineResponse20012Energy.md)
+ - [InlineResponse20012Financials](docs/InlineResponse20012Financials.md)
+ - [InlineResponse20012Food](docs/InlineResponse20012Food.md)
+ - [InlineResponse20012Healthcare](docs/InlineResponse20012Healthcare.md)
+ - [InlineResponse20012Industrials](docs/InlineResponse20012Industrials.md)
+ - [InlineResponse20012Information](docs/InlineResponse20012Information.md)
+ - [InlineResponse20012InformationTools](docs/InlineResponse20012InformationTools.md)
+ - [InlineResponse20013](docs/InlineResponse20013.md)
+ - [InlineResponse20013Data](docs/InlineResponse20013Data.md)
+ - [InlineResponse20014](docs/InlineResponse20014.md)
+ - [InlineResponse20014Data](docs/InlineResponse20014Data.md)
+ - [InlineResponse20015](docs/InlineResponse20015.md)
+ - [InlineResponse20015Data](docs/InlineResponse20015Data.md)
+ - [InlineResponse20016](docs/InlineResponse20016.md)
+ - [InlineResponse20016Company1](docs/InlineResponse20016Company1.md)
+ - [InlineResponse20016Data](docs/InlineResponse20016Data.md)
+ - [InlineResponse20017](docs/InlineResponse20017.md)
+ - [InlineResponse20017Data](docs/InlineResponse20017Data.md)
+ - [InlineResponse20018](docs/InlineResponse20018.md)
+ - [InlineResponse20018Data](docs/InlineResponse20018Data.md)
+ - [InlineResponse20018DataChevronCorpCVX](docs/InlineResponse20018DataChevronCorpCVX.md)
+ - [InlineResponse20019](docs/InlineResponse20019.md)
+ - [InlineResponse2001Data](docs/InlineResponse2001Data.md)
+ - [InlineResponse2002](docs/InlineResponse2002.md)
+ - [InlineResponse20020](docs/InlineResponse20020.md)
+ - [InlineResponse20020Data](docs/InlineResponse20020Data.md)
+ - [InlineResponse20021](docs/InlineResponse20021.md)
+ - [InlineResponse20021Data](docs/InlineResponse20021Data.md)
+ - [InlineResponse20022](docs/InlineResponse20022.md)
+ - [InlineResponse20022Data](docs/InlineResponse20022Data.md)
+ - [InlineResponse20023](docs/InlineResponse20023.md)
+ - [InlineResponse20023Data](docs/InlineResponse20023Data.md)
+ - [InlineResponse20024](docs/InlineResponse20024.md)
+ - [InlineResponse20024Data](docs/InlineResponse20024Data.md)
+ - [InlineResponse20024DataSpinsightsContent](docs/InlineResponse20024DataSpinsightsContent.md)
+ - [InlineResponse20025](docs/InlineResponse20025.md)
+ - [InlineResponse20025Data](docs/InlineResponse20025Data.md)
+ - [InlineResponse20025DataCompassContent](docs/InlineResponse20025DataCompassContent.md)
+ - [InlineResponse20026](docs/InlineResponse20026.md)
+ - [InlineResponse20026Data](docs/InlineResponse20026Data.md)
+ - [InlineResponse20026DataQuestionAnswer](docs/InlineResponse20026DataQuestionAnswer.md)
+ - [InlineResponse20027](docs/InlineResponse20027.md)
+ - [InlineResponse20027Data](docs/InlineResponse20027Data.md)
+ - [InlineResponse20028](docs/InlineResponse20028.md)
+ - [InlineResponse20028Data](docs/InlineResponse20028Data.md)
+ - [InlineResponse20029](docs/InlineResponse20029.md)
+ - [InlineResponse20029Data](docs/InlineResponse20029Data.md)
+ - [InlineResponse2002Data](docs/InlineResponse2002Data.md)
+ - [InlineResponse2002DataQuestionContext](docs/InlineResponse2002DataQuestionContext.md)
+ - [InlineResponse2002DataQuestions](docs/InlineResponse2002DataQuestions.md)
+ - [InlineResponse2003](docs/InlineResponse2003.md)
+ - [InlineResponse2003Data](docs/InlineResponse2003Data.md)
+ - [InlineResponse2003DataSpinsightsExplorer](docs/InlineResponse2003DataSpinsightsExplorer.md)
+ - [InlineResponse2004](docs/InlineResponse2004.md)
+ - [InlineResponse2005](docs/InlineResponse2005.md)
+ - [InlineResponse2005Data](docs/InlineResponse2005Data.md)
+ - [InlineResponse2006](docs/InlineResponse2006.md)
+ - [InlineResponse2007](docs/InlineResponse2007.md)
+ - [InlineResponse2007Data](docs/InlineResponse2007Data.md)
+ - [InlineResponse2007DataHighRiskCompanies](docs/InlineResponse2007DataHighRiskCompanies.md)
+ - [InlineResponse2008](docs/InlineResponse2008.md)
+ - [InlineResponse2008Data](docs/InlineResponse2008Data.md)
+ - [InlineResponse2008DataFinancials](docs/InlineResponse2008DataFinancials.md)
+ - [InlineResponse2008DataFinancialsDrillDownIndustriesDetails](docs/InlineResponse2008DataFinancialsDrillDownIndustriesDetails.md)
+ - [InlineResponse2008DataFinancialsRealEstate](docs/InlineResponse2008DataFinancialsRealEstate.md)
+ - [InlineResponse2008DataFinancialsRealEstateDrillDownIndustriesDetails](docs/InlineResponse2008DataFinancialsRealEstateDrillDownIndustriesDetails.md)
+ - [InlineResponse2008DataFinancialsRealEstateRealEstateRental](docs/InlineResponse2008DataFinancialsRealEstateRealEstateRental.md)
+ - [InlineResponse2008DataFinancialsRealEstateRealEstateRentalHighRiskCompanies](docs/InlineResponse2008DataFinancialsRealEstateRealEstateRentalHighRiskCompanies.md)
+ - [InlineResponse2008DataIndustriesDetails](docs/InlineResponse2008DataIndustriesDetails.md)
+ - [InlineResponse2009](docs/InlineResponse2009.md)
+ - [InlineResponse2009Data](docs/InlineResponse2009Data.md)
+ - [InlineResponse2009DataHighriskIndustries](docs/InlineResponse2009DataHighriskIndustries.md)
+ - [InlineResponse200Data](docs/InlineResponse200Data.md)
+ - [InlineResponse405](docs/InlineResponse405.md)
+ - [InlineResponse405Errors](docs/InlineResponse405Errors.md)
+ - [Pet](docs/Pet.md)
+ - [Tag](docs/Tag.md)
