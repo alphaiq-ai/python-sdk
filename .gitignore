@@ -67,3 +67,4 @@ target/
 
 # Configuration
 .env
+*.toml
