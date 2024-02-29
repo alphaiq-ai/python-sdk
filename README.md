@@ -45,6 +45,7 @@ pip install python-dotenv
 ```
 
 An example of the contents of the ```.env``` file are shown below:
+Note: The password should be Base64 encoded. Encoder can be found [here](https://www.base64encode.org/). 
 
 ```
 EMAIL=example@emaildomain.com
