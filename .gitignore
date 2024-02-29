@@ -71,6 +71,7 @@ target/
 .env
 *.toml
 setup.py
+setup.cfg
 .openapi_generator/
 .gitlab-ci.yml
 .openapi-generator-ignore
