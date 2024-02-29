@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response20018_data_chevron_corp_cvx import InlineResponse20018DataChevronCorpCVX  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response20018_data_chevron_corp_cvx import InlineResponse20018DataChevronCorpCVX  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse20018DataChevronCorpCVX(unittest.TestCase):
     """InlineResponse20018DataChevronCorpCVX unit test stubs"""
@@ -33,7 +33,7 @@ class TestInlineResponse20018DataChevronCorpCVX(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response20018_data_chevron_corp_cvx.InlineResponse20018DataChevronCorpCVX()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response20018_data_chevron_corp_cvx.InlineResponse20018DataChevronCorpCVX()  # noqa: E501
         if include_optional :
             return InlineResponse20018DataChevronCorpCVX(
                 date = '0', 

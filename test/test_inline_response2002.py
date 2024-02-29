@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response2002 import InlineResponse2002  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response2002 import InlineResponse2002  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse2002(unittest.TestCase):
     """InlineResponse2002 unit test stubs"""
@@ -33,19 +33,19 @@ class TestInlineResponse2002(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response2002.InlineResponse2002()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response2002.InlineResponse2002()  # noqa: E501
         if include_optional :
             return InlineResponse2002(
-                data = openapi_client.models.inline_response_200_2_data.inline_response_200_2_data(
+                data = alphaiq_sdk.models.inline_response_200_2_data.inline_response_200_2_data(
                     ticker = '0', 
                     company_name = '0', 
                     questions = [
-                        openapi_client.models.inline_response_200_2_data_questions.inline_response_200_2_data_questions(
+                        alphaiq_sdk.models.inline_response_200_2_data_questions.inline_response_200_2_data_questions(
                             id = 56, 
                             question_text = '0', 
                             question_response = '0', 
                             question_context = [
-                                openapi_client.models.inline_response_200_2_data_question_context.inline_response_200_2_data_question_context(
+                                alphaiq_sdk.models.inline_response_200_2_data_question_context.inline_response_200_2_data_question_context(
                                     id = 56, 
                                     text = '0', 
                                     document_id = '0', 
@@ -58,16 +58,16 @@ class TestInlineResponse2002(unittest.TestCase):
             )
         else :
             return InlineResponse2002(
-                data = openapi_client.models.inline_response_200_2_data.inline_response_200_2_data(
+                data = alphaiq_sdk.models.inline_response_200_2_data.inline_response_200_2_data(
                     ticker = '0', 
                     company_name = '0', 
                     questions = [
-                        openapi_client.models.inline_response_200_2_data_questions.inline_response_200_2_data_questions(
+                        alphaiq_sdk.models.inline_response_200_2_data_questions.inline_response_200_2_data_questions(
                             id = 56, 
                             question_text = '0', 
                             question_response = '0', 
                             question_context = [
-                                openapi_client.models.inline_response_200_2_data_question_context.inline_response_200_2_data_question_context(
+                                alphaiq_sdk.models.inline_response_200_2_data_question_context.inline_response_200_2_data_question_context(
                                     id = 56, 
                                     text = '0', 
                                     document_id = '0', 

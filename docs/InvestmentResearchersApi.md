@@ -1,4 +1,4 @@
-# openapi_client.InvestmentResearchersApi
+# alphaiq_sdk.InvestmentResearchersApi
 
 All URIs are relative to *https://data.app.alphaiq.ai/api/v1*
 
@@ -32,8 +32,8 @@ Most API routes are authenticated via a bearer token. This API allows you to ret
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -42,18 +42,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -117,8 +117,8 @@ This API allows the user to retrieve a download link for the COMPASS PDF report 
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -127,18 +127,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -162,10 +162,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     ticker = 'TSLA' 
 
     try:
@@ -221,8 +221,8 @@ This API allows us to get the company name, ticker and CIK identifiers for a com
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -231,18 +231,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -267,10 +267,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     setattr(configuration, 'access_token', id_token)
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     ticker = 'TSLA' # str |  (optional)
     cik = '0001318605' # str |  (optional)
     body = '' # str |  (optional)
@@ -342,8 +342,8 @@ This API allows us to get all of the latest spindex factors for a company using 
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -352,18 +352,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -389,10 +389,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     setattr(configuration, 'access_token', id_token)
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     ticker = 'TSLA' # str |  (optional)
     signal_id = 'UNCERTAIN-VALUE' # str |  (optional)
 
@@ -463,8 +463,8 @@ This API allows the user to get the latest overall risk score for a company usin
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -473,18 +473,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -508,10 +508,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     ticker = 'TSLA' 
 
     try:
@@ -565,8 +565,8 @@ This API allows us to get a timeseries of the spindex factors for a given compan
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -575,18 +575,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -611,10 +611,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     ticker = 'AAPL'
     start_date = '2024-01-01'
@@ -694,8 +694,8 @@ This API allows us to get a timeseries of the overall risk spindex factor for a 
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -704,18 +704,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -740,10 +740,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     ticker = 'TSLA'
     start_date = '2024-01-01'
@@ -805,8 +805,8 @@ This API allows the user to retrieve a download link for the SPINSIGHTS PDF repo
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -815,18 +815,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -850,10 +850,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     ticker = 'TSLA' 
 
     try:
@@ -909,8 +909,8 @@ This API allows you to retrieve the list of compass questions. Optionally, you c
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -919,18 +919,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -955,10 +955,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     question_id = 1 # int | Question number 1 - 18 (optional)
 
     try:
@@ -1022,8 +1022,8 @@ This API allows the user to query the spindex factors and descriptions. Optional
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -1032,18 +1032,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -1068,10 +1068,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     spindex_id = 'uncertain'
 
     try:
@@ -1137,8 +1137,8 @@ This API allows the user to retrieve the content from the Compass Report for a g
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -1147,18 +1147,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -1182,10 +1182,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     ticker = 'WMT'
 
     try:
@@ -1238,8 +1238,8 @@ This API allows a user to query the question/answer portion of a COMPASS Explore
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -1248,18 +1248,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -1283,10 +1283,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     ticker = 'WMT'
 
     try:
@@ -1341,8 +1341,8 @@ This API allows the user to get the most recent generative SPINSIGHTS Explorer d
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -1351,18 +1351,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -1386,10 +1386,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     ticker = 'WMT' 
 
     try:
@@ -1446,8 +1446,8 @@ This API allows a user to get the most recent SPINSIGHTS report content for a co
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -1456,18 +1456,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
@@ -1491,10 +1491,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Add the bearer token to the configuration for authenticating other routes
     setattr(configuration, 'access_token', id_token)
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
     ticker = 'WMT' 
 
     try:

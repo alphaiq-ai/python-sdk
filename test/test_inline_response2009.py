@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response2009 import InlineResponse2009  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response2009 import InlineResponse2009  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse2009(unittest.TestCase):
     """InlineResponse2009 unit test stubs"""
@@ -33,14 +33,14 @@ class TestInlineResponse2009(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response2009.InlineResponse2009()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response2009.InlineResponse2009()  # noqa: E501
         if include_optional :
             return InlineResponse2009(
-                data = openapi_client.models.inline_response_200_9_data.inline_response_200_9_data(
+                data = alphaiq_sdk.models.inline_response_200_9_data.inline_response_200_9_data(
                     as_of_date = '0', 
                     parent_industry = '0', 
                     highrisk_industries = [
-                        openapi_client.models.inline_response_200_9_data_highrisk_industries.inline_response_200_9_data_highriskIndustries(
+                        alphaiq_sdk.models.inline_response_200_9_data_highrisk_industries.inline_response_200_9_data_highriskIndustries(
                             lvl4_industry_name = '0', 
                             lvl3_industry_name = '0', 
                             overallrisk_value = 56, 
@@ -49,11 +49,11 @@ class TestInlineResponse2009(unittest.TestCase):
             )
         else :
             return InlineResponse2009(
-                data = openapi_client.models.inline_response_200_9_data.inline_response_200_9_data(
+                data = alphaiq_sdk.models.inline_response_200_9_data.inline_response_200_9_data(
                     as_of_date = '0', 
                     parent_industry = '0', 
                     highrisk_industries = [
-                        openapi_client.models.inline_response_200_9_data_highrisk_industries.inline_response_200_9_data_highriskIndustries(
+                        alphaiq_sdk.models.inline_response_200_9_data_highrisk_industries.inline_response_200_9_data_highriskIndustries(
                             lvl4_industry_name = '0', 
                             lvl3_industry_name = '0', 
                             overallrisk_value = 56, 

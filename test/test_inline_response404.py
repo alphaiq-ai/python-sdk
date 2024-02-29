@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response404 import InlineResponse404  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response404 import InlineResponse404  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse404(unittest.TestCase):
     """InlineResponse404 unit test stubs"""
@@ -33,18 +33,18 @@ class TestInlineResponse404(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response404.InlineResponse404()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response404.InlineResponse404()  # noqa: E501
         if include_optional :
             return InlineResponse404(
                 errors = [
-                    openapi_client.models.inline_response_404_errors.inline_response_404_errors(
+                    alphaiq_sdk.models.inline_response_404_errors.inline_response_404_errors(
                         message = '0', )
                     ]
             )
         else :
             return InlineResponse404(
                 errors = [
-                    openapi_client.models.inline_response_404_errors.inline_response_404_errors(
+                    alphaiq_sdk.models.inline_response_404_errors.inline_response_404_errors(
                         message = '0', )
                     ],
         )

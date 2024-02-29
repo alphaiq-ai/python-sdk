@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response2003_data_spinsights_explorer import InlineResponse2003DataSpinsightsExplorer  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response2003_data_spinsights_explorer import InlineResponse2003DataSpinsightsExplorer  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse2003DataSpinsightsExplorer(unittest.TestCase):
     """InlineResponse2003DataSpinsightsExplorer unit test stubs"""
@@ -33,7 +33,7 @@ class TestInlineResponse2003DataSpinsightsExplorer(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response2003_data_spinsights_explorer.InlineResponse2003DataSpinsightsExplorer()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response2003_data_spinsights_explorer.InlineResponse2003DataSpinsightsExplorer()  # noqa: E501
         if include_optional :
             return InlineResponse2003DataSpinsightsExplorer(
                 id = 56, 
