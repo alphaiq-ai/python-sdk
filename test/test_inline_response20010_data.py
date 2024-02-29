@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response20010_data import InlineResponse20010Data  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response20010_data import InlineResponse20010Data  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse20010Data(unittest.TestCase):
     """InlineResponse20010Data unit test stubs"""
@@ -33,13 +33,13 @@ class TestInlineResponse20010Data(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response20010_data.InlineResponse20010Data()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response20010_data.InlineResponse20010Data()  # noqa: E501
         if include_optional :
             return InlineResponse20010Data(
                 as_of_date = '0', 
                 parent_industry = '0', 
                 low_risk_industries = [
-                    openapi_client.models.inline_response_200_9_data_highrisk_industries.inline_response_200_9_data_highriskIndustries(
+                    alphaiq_sdk.models.inline_response_200_9_data_highrisk_industries.inline_response_200_9_data_highriskIndustries(
                         lvl4_industry_name = '0', 
                         lvl3_industry_name = '0', 
                         overallrisk_value = 56, 
@@ -51,7 +51,7 @@ class TestInlineResponse20010Data(unittest.TestCase):
                 as_of_date = '0',
                 parent_industry = '0',
                 low_risk_industries = [
-                    openapi_client.models.inline_response_200_9_data_highrisk_industries.inline_response_200_9_data_highriskIndustries(
+                    alphaiq_sdk.models.inline_response_200_9_data_highrisk_industries.inline_response_200_9_data_highriskIndustries(
                         lvl4_industry_name = '0', 
                         lvl3_industry_name = '0', 
                         overallrisk_value = 56, 

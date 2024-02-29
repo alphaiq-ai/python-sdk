@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.pet import Pet  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.pet import Pet  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestPet(unittest.TestCase):
     """Pet unit test stubs"""
@@ -33,11 +33,11 @@ class TestPet(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.pet.Pet()  # noqa: E501
+        # model = alphaiq_sdk.models.pet.Pet()  # noqa: E501
         if include_optional :
             return Pet(
                 id = 1, 
-                category = openapi_client.models.category.Category(
+                category = alphaiq_sdk.models.category.Category(
                     id = 1, 
                     name = '0', ), 
                 name = '0', 
@@ -45,7 +45,7 @@ class TestPet(unittest.TestCase):
                     '0'
                     ], 
                 tags = [
-                    openapi_client.models.tag.Tag(
+                    alphaiq_sdk.models.tag.Tag(
                         id = 1, 
                         name = '0', )
                     ], 
@@ -54,7 +54,7 @@ class TestPet(unittest.TestCase):
         else :
             return Pet(
                 id = 1,
-                category = openapi_client.models.category.Category(
+                category = alphaiq_sdk.models.category.Category(
                     id = 1, 
                     name = '0', ),
                 name = '0',
@@ -62,7 +62,7 @@ class TestPet(unittest.TestCase):
                     '0'
                     ],
                 tags = [
-                    openapi_client.models.tag.Tag(
+                    alphaiq_sdk.models.tag.Tag(
                         id = 1, 
                         name = '0', )
                     ],

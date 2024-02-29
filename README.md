@@ -47,7 +47,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import openapi_client
+import alphaiq_sdk
 ```
 
 # Getting Started
@@ -71,8 +71,8 @@ Please follow the [installation procedure](#installation) and then run the follo
 import os
 
 from dotenv import load_dotenv
-import openapi_client
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -81,18 +81,18 @@ EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
 # Define the API configuration, client object and API instance
-configuration = openapi_client.Configuration(
+configuration = alphaiq_sdk.Configuration(
     host = 'https://data.app.alphaiq.ai/api/v1'
     )
 
-with openapi_client.ApiClient(configuration) as api_client:
+with alphaiq_sdk.ApiClient(configuration) as api_client:
 
     # Make an instance of the API class
-    api_instance = openapi_client.InvestmentResearchersApi(api_client)
+    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
 
     # Define the values needed to authenticate to the API
     content_type = 'application/json' # str | 
-    inline_object = openapi_client.InlineObject(
+    inline_object = alphaiq_sdk.InlineObject(
         email = EMAIL,
         password = PASSWORD
     )
