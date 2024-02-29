@@ -125,7 +125,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_spindex_get_timeseries_spindex_overall_risk_get**
 
@@ -242,7 +242,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_spindex_get_latest_spindex_factors_get**
 
@@ -369,7 +369,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_spindex_get_timeseries_spindex_factors_get**
 
@@ -504,7 +504,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **generative_company_spinsights_explorer_ticker_get**
 
@@ -614,7 +614,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **generative_company_question_answer_ticker_get**
 
@@ -723,7 +723,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **generative_company_spinsights_report_content_ticker_get**
 
@@ -842,7 +842,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **generative_company_compass_report_content_ticker_get**
 
@@ -955,7 +955,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_spinsights_report_ticker_get**
 
@@ -1062,7 +1062,7 @@ Name | Type | Description | Notes
 **200** | Success |  -  |
 **404** | InsufficientPermissions |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_compass_report_ticker_get**
 
@@ -1169,7 +1169,7 @@ Name | Type | Description | Notes
 **200** | Success |  -  |
 **404** | InsufficientPermissions |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **factor_library_spindex_factors_get**
 
@@ -1288,7 +1288,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **factor_library_compass_questions_get**
 > factor_library_compass_questions_get(question_id=question_id)
@@ -1406,7 +1406,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_mapping_company_to_security_get**
 
@@ -1532,7 +1532,7 @@ Name | Type | Description | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **auth_gettoken_post**
 
@@ -1626,4 +1626,4 @@ See above code example.
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
