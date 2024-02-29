@@ -10,7 +10,7 @@ Review the [Privacy Policy](https://alphaiq.ai/privacy-policy/) and [Terms of Se
 # Installation
 ## Requirements.
 
-Python 2.7 and 3.4+
+Python 3.9+
 
 ## Installation via Pip
 
@@ -30,20 +30,6 @@ import alphaiq_sdk
 pip install git+https://github.com/alphaiq-ai/python-sdk.git
 ```
 (you may need to run `pip` with root permission: `sudo pip install git+https://github.com/alphaiq-ai/python-sdk.git`)
-
-Then import the package:
-```python
-import alphaiq_sdk
-```
-
-## Installation via Setuptools
-
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
-
-```sh
-python setup.py install --user
-```
-(or `sudo python setup.py install` to install the package for all users)
 
 Then import the package:
 ```python
@@ -121,23 +107,22 @@ with alphaiq_sdk.ApiClient(configuration) as api_client:
 
 All URIs are relative to *https://data.app.alphaiq.ai/api/v1*
 
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*InvestmentResearchersApi* | [**auth_gettoken_post**](docs/InvestmentResearchersApi.md#auth_gettoken_post) | **POST** /auth/gettoken | GetToken
-*InvestmentResearchersApi* | [**company_compass_report_ticker_get**](docs/InvestmentResearchersApi.md#company_compass_report_ticker_get) | **GET** /company/compass/report/{ticker} | CompassReportPDF
-*InvestmentResearchersApi* | [**company_mapping_company_to_security_get**](docs/InvestmentResearchersApi.md#company_mapping_company_to_security_get) | **GET** /company-mapping/company-to-security | CompanyToSecurity
-*InvestmentResearchersApi* | [**company_spindex_get_latest_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_factors_get) | **GET** /company-spindex/getLatestSpindexFactors | GetLatestSpindexFactors
-*InvestmentResearchersApi* | [**company_spindex_get_latest_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_overall_risk_get) | **GET** /company-spindex/getLatestSpindexOverallRisk | GetLatestSpindexOverallRisk
-*InvestmentResearchersApi* | [**company_spindex_get_timeseries_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_factors_get) | **GET** /company-spindex/getTimeseriesSpindexFactors | GetTimeseriesSpindexFactors
-*InvestmentResearchersApi* | [**company_spindex_get_timeseries_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_overall_risk_get) | **GET** /company-spindex/getTimeseriesSpindexOverallRisk | GetTimeseriesSpindexOverallRisk
-*InvestmentResearchersApi* | [**company_spinsights_report_ticker_get**](docs/InvestmentResearchersApi.md#company_spinsights_report_ticker_get) | **GET** /company/spinsights/report/{ticker} | SpinsightsReportPDF
-*InvestmentResearchersApi* | [**factor_library_compass_questions_get**](docs/InvestmentResearchersApi.md#factor_library_compass_questions_get) | **GET** /factor-library/compass-questions | GetCompassQuestions
-*InvestmentResearchersApi* | [**factor_library_spindex_factors_get**](docs/InvestmentResearchersApi.md#factor_library_spindex_factors_get) | **GET** /factor-library/spindex-factors | GetSpindexFactors
-*InvestmentResearchersApi* | [**generative_company_compass_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_compass_report_content_ticker_get) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
-*InvestmentResearchersApi* | [**generative_company_question_answer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_question_answer_ticker_get) | **GET** /generative/company/questionAnswer/{ticker} | GetCompassExplorerQuestionAnswer
-*InvestmentResearchersApi* | [**generative_company_spinsights_explorer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_explorer_ticker_get) | **GET** /generative/company/spinsights/explorer/{ticker} | GetSpinsightsExplorer
-*InvestmentResearchersApi* | [**generative_company_spinsights_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_report_content_ticker_get) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
-
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**company_spindex_get_latest_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_overall_risk_get) | **GET** /company-spindex/getLatestSpindexOverallRisk | Get Latest Spindex Overall Risk
+[**company_spindex_get_timeseries_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_overall_risk_get) | **GET** /company-spindex/getTimeseriesSpindexOverallRisk | Get Timeseries Spindex Overall Risk
+[**company_spindex_get_latest_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_factors_get) | **GET** /company-spindex/getLatestSpindexFactors | Get Latest Spindex Factors
+[**company_spindex_get_timeseries_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_factors_get) | **GET** /company-spindex/getTimeseriesSpindexFactors | Get Timeseries Spindex Factors
+[**generative_company_spinsights_explorer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_explorer_ticker_get) | **GET** /generative/company/spinsights/explorer/{ticker} | Get Spinsights Explorer
+[**generative_company_question_answer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_question_answer_ticker_get) | **GET** /generative/company/questionAnswer/{ticker} | Get Compass Explorer Question Answer
+[**generative_company_spinsights_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_report_content_ticker_get) | **GET** /generative/company/spinsights/reportContent/{ticker} | Get Spinsights Report Content
+[**generative_company_compass_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_compass_report_content_ticker_get) | **GET** /generative/company/compass/reportContent/{ticker} | Get Compass Report Content
+[**company_spinsights_report_ticker_get**](docs/InvestmentResearchersApi.md#company_spinsights_report_ticker_get) | **GET** /company/spinsights/report/{ticker} | Spinsights Report PDF
+[**company_compass_report_ticker_get**](docs/InvestmentResearchersApi.md#company_compass_report_ticker_get) | **GET** /company/compass/report/{ticker} | Compass Report PDF
+[**factor_library_spindex_factors_get**](docs/InvestmentResearchersApi.md#factor_library_spindex_factors_get) | **GET** /factor-library/spindex-factors | Get Spindex Factors
+[**factor_library_compass_questions_get**](docs/InvestmentResearchersApi.md#factor_library_compass_questions_get) | **GET** /factor-library/compass-questions | Get Compass Questions
+[**company_mapping_company_to_security_get**](docs/InvestmentResearchersApi.md#company_mapping_company_to_security_get) | **GET** /company-mapping/company-to-security | Company To Security
+[**auth_gettoken_post**](docs/InvestmentResearchersApi.md#auth_gettoken_post) | **POST** /auth/gettoken | Get Token
 
 ## Documentation For Models
 
@@ -233,5 +218,3 @@ Class | Method | HTTP request | Description
  - [InlineResponse200Data](docs/InlineResponse200Data.md)
  - [InlineResponse405](docs/InlineResponse405.md)
  - [InlineResponse405Errors](docs/InlineResponse405Errors.md)
- - [Pet](docs/Pet.md)
- - [Tag](docs/Tag.md)
