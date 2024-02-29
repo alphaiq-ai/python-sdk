@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response20030 import InlineResponse20030  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response20030 import InlineResponse20030  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse20030(unittest.TestCase):
     """InlineResponse20030 unit test stubs"""
@@ -33,11 +33,11 @@ class TestInlineResponse20030(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response20030.InlineResponse20030()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response20030.InlineResponse20030()  # noqa: E501
         if include_optional :
             return InlineResponse20030(
                 data = [
-                    openapi_client.models.inline_response_200_30_data.inline_response_200_30_data(
+                    alphaiq_sdk.models.inline_response_200_30_data.inline_response_200_30_data(
                         date = '0', 
                         ticker = '0', 
                         signal_id = '0', 
@@ -47,7 +47,7 @@ class TestInlineResponse20030(unittest.TestCase):
         else :
             return InlineResponse20030(
                 data = [
-                    openapi_client.models.inline_response_200_30_data.inline_response_200_30_data(
+                    alphaiq_sdk.models.inline_response_200_30_data.inline_response_200_30_data(
                         date = '0', 
                         ticker = '0', 
                         signal_id = '0', 

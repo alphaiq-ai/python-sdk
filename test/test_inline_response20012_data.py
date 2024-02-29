@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response20012_data import InlineResponse20012Data  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response20012_data import InlineResponse20012Data  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse20012Data(unittest.TestCase):
     """InlineResponse20012Data unit test stubs"""
@@ -33,11 +33,11 @@ class TestInlineResponse20012Data(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response20012_data.InlineResponse20012Data()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response20012_data.InlineResponse20012Data()  # noqa: E501
         if include_optional :
             return InlineResponse20012Data(
                 financials = [
-                    openapi_client.models.inline_response_200_12_financials.inline_response_200_12_Financials(
+                    alphaiq_sdk.models.inline_response_200_12_financials.inline_response_200_12_Financials(
                         banking = [
                             '0'
                             ], 
@@ -49,7 +49,7 @@ class TestInlineResponse20012Data(unittest.TestCase):
                             ], )
                     ], 
                 food = [
-                    openapi_client.models.inline_response_200_12_food.inline_response_200_12_Food(
+                    alphaiq_sdk.models.inline_response_200_12_food.inline_response_200_12_Food(
                         food_production = [
                             '0'
                             ], 
@@ -58,7 +58,7 @@ class TestInlineResponse20012Data(unittest.TestCase):
                             ], )
                     ], 
                 healthcare = [
-                    openapi_client.models.inline_response_200_12_healthcare.inline_response_200_12_Healthcare(
+                    alphaiq_sdk.models.inline_response_200_12_healthcare.inline_response_200_12_Healthcare(
                         consumer_healthcare = [
                             '0'
                             ], 
@@ -70,7 +70,7 @@ class TestInlineResponse20012Data(unittest.TestCase):
                             ], )
                     ], 
                 information = [
-                    openapi_client.models.inline_response_200_12_information.inline_response_200_12_Information(
+                    alphaiq_sdk.models.inline_response_200_12_information.inline_response_200_12_Information(
                         commercial_information_services = [
                             '0'
                             ], 
@@ -82,7 +82,7 @@ class TestInlineResponse20012Data(unittest.TestCase):
                             ], )
                     ], 
                 energy = [
-                    openapi_client.models.inline_response_200_12_energy.inline_response_200_12_Energy(
+                    alphaiq_sdk.models.inline_response_200_12_energy.inline_response_200_12_Energy(
                         oil_and_gas = [
                             '0'
                             ], 
@@ -91,7 +91,7 @@ class TestInlineResponse20012Data(unittest.TestCase):
                             ], )
                     ], 
                 industrials = [
-                    openapi_client.models.inline_response_200_12_industrials.inline_response_200_12_Industrials(
+                    alphaiq_sdk.models.inline_response_200_12_industrials.inline_response_200_12_Industrials(
                         industrial_components = [
                             '0'
                             ], 
@@ -106,7 +106,7 @@ class TestInlineResponse20012Data(unittest.TestCase):
                             ], )
                     ], 
                 information_tools = [
-                    openapi_client.models.inline_response_200_12_information_tools.inline_response_200_12_Information_Tools(
+                    alphaiq_sdk.models.inline_response_200_12_information_tools.inline_response_200_12_Information_Tools(
                         integrated_circuits = [
                             '0'
                             ], 
@@ -118,7 +118,7 @@ class TestInlineResponse20012Data(unittest.TestCase):
                             ], )
                     ], 
                 consumer_products_and_services = [
-                    openapi_client.models.inline_response_200_12_consumer_products_and_services.inline_response_200_12_Consumer_Products_and_Services(
+                    alphaiq_sdk.models.inline_response_200_12_consumer_products_and_services.inline_response_200_12_Consumer_Products_and_Services(
                         apparel_and_accessories = [
                             '0'
                             ], 

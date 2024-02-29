@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response20011_data import InlineResponse20011Data  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response20011_data import InlineResponse20011Data  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse20011Data(unittest.TestCase):
     """InlineResponse20011Data unit test stubs"""
@@ -33,22 +33,22 @@ class TestInlineResponse20011Data(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response20011_data.InlineResponse20011Data()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response20011_data.InlineResponse20011Data()  # noqa: E501
         if include_optional :
             return InlineResponse20011Data(
                 lvl2_industries_with_latest_avg_overallrisk = [
-                    openapi_client.models.inline_response_200_11_data_lvl2_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl2IndustriesWithLatestAvgOverallrisk(
+                    alphaiq_sdk.models.inline_response_200_11_data_lvl2_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl2IndustriesWithLatestAvgOverallrisk(
                         industry_name = '0', 
                         overallrisk = 56, )
                     ], 
                 lvl3_industries_with_latest_avg_overallrisk = [
-                    openapi_client.models.inline_response_200_11_data_lvl3_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl3IndustriesWithLatestAvgOverallrisk(
+                    alphaiq_sdk.models.inline_response_200_11_data_lvl3_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl3IndustriesWithLatestAvgOverallrisk(
                         industry_name = '0', 
                         overallrisk = 56, 
                         parent_industry = '0', )
                     ], 
                 lvl4_industries_with_latest_overallrisk = [
-                    openapi_client.models.inline_response_200_11_data_lvl3_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl3IndustriesWithLatestAvgOverallrisk(
+                    alphaiq_sdk.models.inline_response_200_11_data_lvl3_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl3IndustriesWithLatestAvgOverallrisk(
                         industry_name = '0', 
                         overallrisk = 56, 
                         parent_industry = '0', )
@@ -57,18 +57,18 @@ class TestInlineResponse20011Data(unittest.TestCase):
         else :
             return InlineResponse20011Data(
                 lvl2_industries_with_latest_avg_overallrisk = [
-                    openapi_client.models.inline_response_200_11_data_lvl2_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl2IndustriesWithLatestAvgOverallrisk(
+                    alphaiq_sdk.models.inline_response_200_11_data_lvl2_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl2IndustriesWithLatestAvgOverallrisk(
                         industry_name = '0', 
                         overallrisk = 56, )
                     ],
                 lvl3_industries_with_latest_avg_overallrisk = [
-                    openapi_client.models.inline_response_200_11_data_lvl3_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl3IndustriesWithLatestAvgOverallrisk(
+                    alphaiq_sdk.models.inline_response_200_11_data_lvl3_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl3IndustriesWithLatestAvgOverallrisk(
                         industry_name = '0', 
                         overallrisk = 56, 
                         parent_industry = '0', )
                     ],
                 lvl4_industries_with_latest_overallrisk = [
-                    openapi_client.models.inline_response_200_11_data_lvl3_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl3IndustriesWithLatestAvgOverallrisk(
+                    alphaiq_sdk.models.inline_response_200_11_data_lvl3_industries_with_latest_avg_overallrisk.inline_response_200_11_data_lvl3IndustriesWithLatestAvgOverallrisk(
                         industry_name = '0', 
                         overallrisk = 56, 
                         parent_industry = '0', )

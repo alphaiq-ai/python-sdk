@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response20016_company1 import InlineResponse20016Company1  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response20016_company1 import InlineResponse20016Company1  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse20016Company1(unittest.TestCase):
     """InlineResponse20016Company1 unit test stubs"""
@@ -33,7 +33,7 @@ class TestInlineResponse20016Company1(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response20016_company1.InlineResponse20016Company1()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response20016_company1.InlineResponse20016Company1()  # noqa: E501
         if include_optional :
             return InlineResponse20016Company1(
                 overallrisk_value = 56, 

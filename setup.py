@@ -23,7 +23,7 @@ REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 setup(
     name=NAME,
     version=VERSION,
-    description="AlphaIQ API",
+    description="Access AlphaIQ quantitative linguistics signals and generative content",
     author="AlphaIQ",
     author_email="contact@alphaiq.ai",
     url="",

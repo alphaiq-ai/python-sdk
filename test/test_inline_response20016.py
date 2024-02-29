@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response20016 import InlineResponse20016  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response20016 import InlineResponse20016  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse20016(unittest.TestCase):
     """InlineResponse20016 unit test stubs"""
@@ -33,18 +33,18 @@ class TestInlineResponse20016(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response20016.InlineResponse20016()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response20016.InlineResponse20016()  # noqa: E501
         if include_optional :
             return InlineResponse20016(
                 data = [
-                    openapi_client.models.inline_response_200_16_data.inline_response_200_16_data(
-                        company1 = openapi_client.models.inline_response_200_16_company1.inline_response_200_16_company1(
+                    alphaiq_sdk.models.inline_response_200_16_data.inline_response_200_16_data(
+                        company1 = alphaiq_sdk.models.inline_response_200_16_company1.inline_response_200_16_company1(
                             overallrisk_value = 56, 
                             overallrisk_value_12_w_lag = 56, 
                             overallrisk_value_4_w_lag = 56, 
                             overallrisk_value_52_w_lag = 56, ), 
-                        company2 = openapi_client.models.company2.company2(), 
-                        company3 = openapi_client.models.inline_response_200_16_company1.inline_response_200_16_company1(
+                        company2 = alphaiq_sdk.models.company2.company2(), 
+                        company3 = alphaiq_sdk.models.inline_response_200_16_company1.inline_response_200_16_company1(
                             overallrisk_value = 56, 
                             overallrisk_value_12_w_lag = 56, 
                             overallrisk_value_4_w_lag = 56, 
@@ -54,14 +54,14 @@ class TestInlineResponse20016(unittest.TestCase):
         else :
             return InlineResponse20016(
                 data = [
-                    openapi_client.models.inline_response_200_16_data.inline_response_200_16_data(
-                        company1 = openapi_client.models.inline_response_200_16_company1.inline_response_200_16_company1(
+                    alphaiq_sdk.models.inline_response_200_16_data.inline_response_200_16_data(
+                        company1 = alphaiq_sdk.models.inline_response_200_16_company1.inline_response_200_16_company1(
                             overallrisk_value = 56, 
                             overallrisk_value_12_w_lag = 56, 
                             overallrisk_value_4_w_lag = 56, 
                             overallrisk_value_52_w_lag = 56, ), 
-                        company2 = openapi_client.models.company2.company2(), 
-                        company3 = openapi_client.models.inline_response_200_16_company1.inline_response_200_16_company1(
+                        company2 = alphaiq_sdk.models.company2.company2(), 
+                        company3 = alphaiq_sdk.models.inline_response_200_16_company1.inline_response_200_16_company1(
                             overallrisk_value = 56, 
                             overallrisk_value_12_w_lag = 56, 
                             overallrisk_value_4_w_lag = 56, 

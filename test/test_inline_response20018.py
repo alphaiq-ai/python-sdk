@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response20018 import InlineResponse20018  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response20018 import InlineResponse20018  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse20018(unittest.TestCase):
     """InlineResponse20018 unit test stubs"""
@@ -33,21 +33,21 @@ class TestInlineResponse20018(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response20018.InlineResponse20018()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response20018.InlineResponse20018()  # noqa: E501
         if include_optional :
             return InlineResponse20018(
-                data = openapi_client.models.inline_response_200_18_data.inline_response_200_18_data(
+                data = alphaiq_sdk.models.inline_response_200_18_data.inline_response_200_18_data(
                     chevron_corp/_(cvx) = [
-                        openapi_client.models.inline_response_200_18_data_chevron_corp___cvx_.inline_response_200_18_data_Chevron_Corp___CVX_(
+                        alphaiq_sdk.models.inline_response_200_18_data_chevron_corp___cvx_.inline_response_200_18_data_Chevron_Corp___CVX_(
                             date = '0', 
                             overallrisk = 56, )
                         ], )
             )
         else :
             return InlineResponse20018(
-                data = openapi_client.models.inline_response_200_18_data.inline_response_200_18_data(
+                data = alphaiq_sdk.models.inline_response_200_18_data.inline_response_200_18_data(
                     chevron_corp/_(cvx) = [
-                        openapi_client.models.inline_response_200_18_data_chevron_corp___cvx_.inline_response_200_18_data_Chevron_Corp___CVX_(
+                        alphaiq_sdk.models.inline_response_200_18_data_chevron_corp___cvx_.inline_response_200_18_data_Chevron_Corp___CVX_(
                             date = '0', 
                             overallrisk = 56, )
                         ], ),

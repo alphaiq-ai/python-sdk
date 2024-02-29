@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response20024 import InlineResponse20024  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response20024 import InlineResponse20024  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse20024(unittest.TestCase):
     """InlineResponse20024 unit test stubs"""
@@ -33,11 +33,11 @@ class TestInlineResponse20024(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response20024.InlineResponse20024()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response20024.InlineResponse20024()  # noqa: E501
         if include_optional :
             return InlineResponse20024(
-                data = openapi_client.models.inline_response_200_24_data.inline_response_200_24_data(
-                    spinsights_content = openapi_client.models.inline_response_200_24_data_spinsights_content.inline_response_200_24_data_spinsights_content(
+                data = alphaiq_sdk.models.inline_response_200_24_data.inline_response_200_24_data(
+                    spinsights_content = alphaiq_sdk.models.inline_response_200_24_data_spinsights_content.inline_response_200_24_data_spinsights_content(
                         spinsights_title = '0', 
                         spinsights_asof_date = '0', 
                         spindex_summary = '0', 
@@ -52,8 +52,8 @@ class TestInlineResponse20024(unittest.TestCase):
             )
         else :
             return InlineResponse20024(
-                data = openapi_client.models.inline_response_200_24_data.inline_response_200_24_data(
-                    spinsights_content = openapi_client.models.inline_response_200_24_data_spinsights_content.inline_response_200_24_data_spinsights_content(
+                data = alphaiq_sdk.models.inline_response_200_24_data.inline_response_200_24_data(
+                    spinsights_content = alphaiq_sdk.models.inline_response_200_24_data_spinsights_content.inline_response_200_24_data_spinsights_content(
                         spinsights_title = '0', 
                         spinsights_asof_date = '0', 
                         spindex_summary = '0', 

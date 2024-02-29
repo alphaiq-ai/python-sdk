@@ -15,9 +15,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import openapi_client
-from openapi_client.models.inline_response2008_data_financials_drill_down_industries_details import InlineResponse2008DataFinancialsDrillDownIndustriesDetails  # noqa: E501
-from openapi_client.rest import ApiException
+import alphaiq_sdk
+from alphaiq_sdk.models.inline_response2008_data_financials_drill_down_industries_details import InlineResponse2008DataFinancialsDrillDownIndustriesDetails  # noqa: E501
+from alphaiq_sdk.rest import ApiException
 
 class TestInlineResponse2008DataFinancialsDrillDownIndustriesDetails(unittest.TestCase):
     """InlineResponse2008DataFinancialsDrillDownIndustriesDetails unit test stubs"""
@@ -33,22 +33,22 @@ class TestInlineResponse2008DataFinancialsDrillDownIndustriesDetails(unittest.Te
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = openapi_client.models.inline_response2008_data_financials_drill_down_industries_details.InlineResponse2008DataFinancialsDrillDownIndustriesDetails()  # noqa: E501
+        # model = alphaiq_sdk.models.inline_response2008_data_financials_drill_down_industries_details.InlineResponse2008DataFinancialsDrillDownIndustriesDetails()  # noqa: E501
         if include_optional :
             return InlineResponse2008DataFinancialsDrillDownIndustriesDetails(
-                real_estate = openapi_client.models.inline_response_200_8_data_financials_real_estate.inline_response_200_8_data_Financials_Real_Estate(
+                real_estate = alphaiq_sdk.models.inline_response_200_8_data_financials_real_estate.inline_response_200_8_data_Financials_Real_Estate(
                     overallrisk_value = 56, 
                     drill_down_industries_details = [
-                        openapi_client.models.inline_response_200_8_data_financials_real_estate_drill_down_industries_details.inline_response_200_8_data_Financials_Real_Estate_drillDownIndustriesDetails(
-                            real_estate_rental = openapi_client.models.inline_response_200_8_data_financials_real_estate_real_estate_rental.inline_response_200_8_data_Financials_Real_Estate_Real_Estate_Rental(
+                        alphaiq_sdk.models.inline_response_200_8_data_financials_real_estate_drill_down_industries_details.inline_response_200_8_data_Financials_Real_Estate_drillDownIndustriesDetails(
+                            real_estate_rental = alphaiq_sdk.models.inline_response_200_8_data_financials_real_estate_real_estate_rental.inline_response_200_8_data_Financials_Real_Estate_Real_Estate_Rental(
                                 overallrisk_value = 56, 
                                 high_risk_companies = [
-                                    openapi_client.models.inline_response_200_8_data_financials_real_estate_real_estate_rental_high_risk_companies.inline_response_200_8_data_Financials_Real_Estate_Real_Estate_Rental_highRiskCompanies(
+                                    alphaiq_sdk.models.inline_response_200_8_data_financials_real_estate_real_estate_rental_high_risk_companies.inline_response_200_8_data_Financials_Real_Estate_Real_Estate_Rental_highRiskCompanies(
                                         company_name = '0', 
                                         overallrisk_value = 56, )
                                     ], 
                                 low_risk_companies = [
-                                    openapi_client.models.inline_response_200_8_data_financials_real_estate_real_estate_rental_high_risk_companies.inline_response_200_8_data_Financials_Real_Estate_Real_Estate_Rental_highRiskCompanies(
+                                    alphaiq_sdk.models.inline_response_200_8_data_financials_real_estate_real_estate_rental_high_risk_companies.inline_response_200_8_data_Financials_Real_Estate_Real_Estate_Rental_highRiskCompanies(
                                         company_name = '0', 
                                         overallrisk_value = 56, )
                                     ], ), )
