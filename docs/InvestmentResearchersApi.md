@@ -102,14 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  | 
-**date** | **str** |  | [optional] 
-**ticker** | **str** |  | [optional] 
-**signal_id** | **str** |  | [optional] 
-**signal_value** | **int** |  | [optional] 
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
