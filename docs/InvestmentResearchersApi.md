@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**auth_gettoken_post**](docs/InvestmentResearchersApi.md#auth_gettoken_post) | **POST** /auth/gettoken | Get Token
 
 # **company_spindex_get_latest_spindex_overall_risk_get**
+> InlineResponse20023 company_spindex_get_latest_spindex_overall_risk_get(ticker)
 
 Get the latest overall risk score for a company using the company's ticker.
 
@@ -121,6 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_spindex_get_timeseries_spindex_overall_risk_get**
+> InlineResponse20022 company_spindex_get_timeseries_spindex_overall_risk_get(ticker, start_date, end_date)
 
 Get the timeseries of a company's overall spindex score.
 
@@ -212,14 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  | 
-**date** | **str** |  | 
-**ticker** | **str** |  | 
-**signal_id** | **str** |  | 
-**signal_value** | **int** |  | 
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -238,6 +233,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_spindex_get_latest_spindex_factors_get**
+> InlineResponse20023 company_spindex_get_latest_spindex_factors_get(ticker=ticker, signal_id=signal_id)
 
 Get the latest spindex factors for a company using the company ticker.
 
@@ -339,14 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  | 
-**date** | **str** |  | [optional] 
-**ticker** | **str** |  | [optional] 
-**signal_id** | **str** |  | [optional] 
-**signal_value** | **int** |  | [optional] 
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -365,6 +354,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_spindex_get_timeseries_spindex_factors_get**
+> InlineResponse20022 company_spindex_get_timeseries_spindex_factors_get(ticker, start_date, end_date, signal_id=signal_id)
 
 Get the timeseries of spindex factors for a company by providing the ticker, start and end date.
 
@@ -474,14 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  | 
-**date** | **str** |  | 
-**ticker** | **str** |  | 
-**signal_id** | **str** |  | 
-**signal_value** | **int** |  | 
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -500,6 +483,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **generative_company_spinsights_explorer_ticker_get**
+> InlineResponse2003 generative_company_spinsights_explorer_ticker_get(ticker)
 
 Get the most recent generative SPINSIGHTS Explorer data for a company. This content explains the underlying drivers of the 9 SPINDEX Factors.
 
@@ -583,15 +567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  | 
-**spinsights_explorer** | JSON | |
-**id** | **int** |  | 
-**factor_name** | **str** |  | 
-**factor_description** | **str** |  | 
-**factor_summary** | **str** |  | 
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -610,6 +586,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **generative_company_question_answer_ticker_get**
+> InlineResponse20026 generative_company_question_answer_ticker_get(ticker)
 
 Get the COMPASS Explorer Question & Answer results.
 
@@ -693,14 +670,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  | 
-**question_answer** | JSON |  | 
-**id** | **int** |  | 
-**question_text** | **str** |  | 
-**question_response** | **str** |  | 
+[**InlineResponse20026**](InlineResponse20026.md)
 
 ### Authorization
 
@@ -719,6 +689,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **generative_company_spinsights_report_content_ticker_get**
+> InlineResponse20024 generative_company_spinsights_report_content_ticker_get(ticker)
 
 Get the most recent SPINSIGHTS report content for a company. This report content specifically highlights the company's language which is more prominent than peers.
 
@@ -804,22 +775,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  | 
-**spinsights_content** | JSON |  | 
-**spinsights_title** | **str** |  | 
-**spinsights_asof_date** | **str** |  | 
-**spindex_summary** | **str** |  | 
-**final_article** | **str** |  | 
-**final_topics** | **str** |  | 
-**article_part1** | **str** |  | 
-**part1_topics** | **str** |  | 
-**article_part2** | **str** |  | 
-**part2_topics** | **str** |  | 
-**article_part3** | **str** |  | 
-**part3_topics** | **str** |  | 
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -838,6 +794,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **generative_company_compass_report_content_ticker_get**
+> InlineResponse20025 generative_company_compass_report_content_ticker_get(ticker)
 
 Get the content generated for the COMPASS PDF report.
 
@@ -919,20 +876,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  | 
-**compass_content** | JSON |  | 
-**compass_title** | **str** |  | 
-**compass_asof_date** | **str** |  | 
-**executive_summary** | **str** |  | 
-**trending_up_article** | **str** |  | 
-**trending_up_topics** | **str** |  | 
-**popularity_article** | **str** |  | 
-**popularity_topics** | **str** |  | 
-**trending_down_article** | **str** |  | 
-**trending_down_topics** | **str** |  | 
+[**InlineResponse20025**](InlineResponse20025.md)
 
 ### Authorization
 
@@ -951,6 +895,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_spinsights_report_ticker_get**
+> InlineResponse20020 company_spinsights_report_ticker_get(ticker)
 
 Get a pre-signed URL for a company's generative SPINSIGHTS PDF report.
 
@@ -1034,11 +979,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON | | 
-**url** | **str** | Pre-signed download link for AWS S3 object | 
+[**InlineResponse20020**](InlineResponse20020.md)
 
 ### Authorization
 
@@ -1058,6 +999,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_compass_report_ticker_get**
+> InlineResponse200 company_compass_report_ticker_get(ticker)
 
 Get pre-signed URL for a company's generative COMPASS PDF report
 
@@ -1141,11 +1083,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON | | 
-**url** | **str** | Pre-signed download link for AWS S3 object | 
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -1165,6 +1103,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **factor_library_spindex_factors_get**
+> InlineResponse20028 factor_library_spindex_factors_get(spindex_id=spindex_id)
 
 Get a list of the spindex factors.
 
@@ -1260,12 +1199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  | 
-**spindex_name** | **str** |  | [optional] 
-**spindex_definition** | **str** |  | [optional] 
+[**InlineResponse20028**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -1284,9 +1218,9 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **factor_library_compass_questions_get**
-> factor_library_compass_questions_get(question_id=question_id)
+> InlineResponse20029 factor_library_compass_questions_get(question_id=question_id)
 
-Get a list and description of the questions in the COMPASS Explorer Question & Answer.
+Get a list and description of the questions in the COMPASS PDF report.
 
 ### Example
 
@@ -1378,12 +1312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  |
-**question_id** | **str** |  | [optional] 
-**question_text** | **str** |  | [optional] 
+[**InlineResponse20029**](InlineResponse20029.md)
 
 ### Authorization
 
@@ -1402,6 +1331,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **company_mapping_company_to_security_get**
+> InlineResponse20027 company_mapping_company_to_security_get(ticker=ticker, cik=cik, body=body)
 
 Get the ticker, CIK and company name by providing a ticker or CIK identifier.
 
@@ -1503,13 +1433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  |
-**ticker** | **str** |  | [optional] 
-**cik** | **str** |  | [optional] 
-**company_name** | **str** |  | [optional] 
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -1528,6 +1452,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)  [[Back to README]](../README.md)
 
 # **auth_gettoken_post**
+> InlineResponse200 auth_gettoken_post(content_type, inline_object=inline_object)
 
 Get a bearer token with username and base64_encoded password  
 
@@ -1594,16 +1519,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | JSON |  |
-**access_token** | **str** |  | 
-**challenge_parameters** | [**object**](.md) |  | 
-**id_token** | **str** |  | 
-**refresh_token** | **str** |  | 
-**token_type** | **str** |  | 
-**expires_in** | **int** |  | 
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
