@@ -1,0 +1,28 @@
+# pyproject.toml
+
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alphaiq-sdk"
+version = "0.2.4"
+description = "Access AlphaIQ quantitative linguistics signals and generative content"
+readme = "README.md"
+authors = [{ name = "AlphaIQ", email = "contact@alphaiq.ai" }]
+
+classifiers = [
+    "Programming Language :: Python",
+]
+keywords = ["risk", "AI", "fintech", "investing","NLP"]
+dependencies = [
+    "certifi >= 14.05.14",
+    "six >= 1.10",
+    "python_dateutil >= 2.5.3",
+    "setuptools >= 21.0.0",
+    "urllib3 >= 1.15.1"
+]
+requires-python = ">=3.9"
+
+[project.urls]
+GitHub = "https://github.com/alphaiq-ai/python-sdk"

@@ -69,7 +69,6 @@ target/
 
 # Configuration
 .env
-*.toml
 setup.py
 setup.cfg
 .openapi_generator/
