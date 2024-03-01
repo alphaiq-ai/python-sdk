@@ -10,7 +10,7 @@ Review the [Privacy Policy](https://alphaiq.ai/privacy-policy/) and [Terms of Se
 # Installation
 ## Requirements.
 
-Python 2.7 and 3.4+
+Python 3.9+
 
 ## Installation via Pip
 
@@ -36,20 +36,6 @@ Then import the package:
 import alphaiq_sdk
 ```
 
-## Installation via Setuptools
-
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
-
-```sh
-python setup.py install --user
-```
-(or `sudo python setup.py install` to install the package for all users)
-
-Then import the package:
-```python
-import alphaiq_sdk
-```
-
 # Getting Started
 
 It is advised to setup a ```.env``` file the store credentials. Documentation can be found [here](https://pypi.org/project/python-dotenv/). To use the ```.env``` file to store credentials, install the ```python-dotenv``` package with pip:
@@ -59,6 +45,7 @@ pip install python-dotenv
 ```
 
 An example of the contents of the ```.env``` file are shown below:
+Note: The password should be Base64 encoded. Encoder can be found [here](https://www.base64encode.org/). 
 
 ```
 EMAIL=example@emaildomain.com
@@ -121,23 +108,22 @@ with alphaiq_sdk.ApiClient(configuration) as api_client:
 
 All URIs are relative to *https://data.app.alphaiq.ai/api/v1*
 
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*InvestmentResearchersApi* | [**auth_gettoken_post**](docs/InvestmentResearchersApi.md#auth_gettoken_post) | **POST** /auth/gettoken | GetToken
-*InvestmentResearchersApi* | [**company_compass_report_ticker_get**](docs/InvestmentResearchersApi.md#company_compass_report_ticker_get) | **GET** /company/compass/report/{ticker} | CompassReportPDF
-*InvestmentResearchersApi* | [**company_mapping_company_to_security_get**](docs/InvestmentResearchersApi.md#company_mapping_company_to_security_get) | **GET** /company-mapping/company-to-security | CompanyToSecurity
-*InvestmentResearchersApi* | [**company_spindex_get_latest_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_factors_get) | **GET** /company-spindex/getLatestSpindexFactors | GetLatestSpindexFactors
-*InvestmentResearchersApi* | [**company_spindex_get_latest_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_overall_risk_get) | **GET** /company-spindex/getLatestSpindexOverallRisk | GetLatestSpindexOverallRisk
-*InvestmentResearchersApi* | [**company_spindex_get_timeseries_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_factors_get) | **GET** /company-spindex/getTimeseriesSpindexFactors | GetTimeseriesSpindexFactors
-*InvestmentResearchersApi* | [**company_spindex_get_timeseries_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_overall_risk_get) | **GET** /company-spindex/getTimeseriesSpindexOverallRisk | GetTimeseriesSpindexOverallRisk
-*InvestmentResearchersApi* | [**company_spinsights_report_ticker_get**](docs/InvestmentResearchersApi.md#company_spinsights_report_ticker_get) | **GET** /company/spinsights/report/{ticker} | SpinsightsReportPDF
-*InvestmentResearchersApi* | [**factor_library_compass_questions_get**](docs/InvestmentResearchersApi.md#factor_library_compass_questions_get) | **GET** /factor-library/compass-questions | GetCompassQuestions
-*InvestmentResearchersApi* | [**factor_library_spindex_factors_get**](docs/InvestmentResearchersApi.md#factor_library_spindex_factors_get) | **GET** /factor-library/spindex-factors | GetSpindexFactors
-*InvestmentResearchersApi* | [**generative_company_compass_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_compass_report_content_ticker_get) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
-*InvestmentResearchersApi* | [**generative_company_question_answer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_question_answer_ticker_get) | **GET** /generative/company/questionAnswer/{ticker} | GetCompassExplorerQuestionAnswer
-*InvestmentResearchersApi* | [**generative_company_spinsights_explorer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_explorer_ticker_get) | **GET** /generative/company/spinsights/explorer/{ticker} | GetSpinsightsExplorer
-*InvestmentResearchersApi* | [**generative_company_spinsights_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_report_content_ticker_get) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
-
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**company_spindex_get_latest_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_overall_risk_get) | **GET** /company-spindex/getLatestSpindexOverallRisk | Get Latest Spindex Overall Risk
+[**company_spindex_get_timeseries_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_overall_risk_get) | **GET** /company-spindex/getTimeseriesSpindexOverallRisk | Get Timeseries Spindex Overall Risk
+[**company_spindex_get_latest_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_factors_get) | **GET** /company-spindex/getLatestSpindexFactors | Get Latest Spindex Factors
+[**company_spindex_get_timeseries_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_factors_get) | **GET** /company-spindex/getTimeseriesSpindexFactors | Get Timeseries Spindex Factors
+[**generative_company_spinsights_explorer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_explorer_ticker_get) | **GET** /generative/company/spinsights/explorer/{ticker} | Get Spinsights Explorer
+[**generative_company_question_answer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_question_answer_ticker_get) | **GET** /generative/company/questionAnswer/{ticker} | Get Compass Explorer Question Answer
+[**generative_company_spinsights_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_report_content_ticker_get) | **GET** /generative/company/spinsights/reportContent/{ticker} | Get Spinsights Report Content
+[**generative_company_compass_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_compass_report_content_ticker_get) | **GET** /generative/company/compass/reportContent/{ticker} | Get Compass Report Content
+[**company_spinsights_report_ticker_get**](docs/InvestmentResearchersApi.md#company_spinsights_report_ticker_get) | **GET** /company/spinsights/report/{ticker} | Spinsights Report PDF
+[**company_compass_report_ticker_get**](docs/InvestmentResearchersApi.md#company_compass_report_ticker_get) | **GET** /company/compass/report/{ticker} | Compass Report PDF
+[**factor_library_spindex_factors_get**](docs/InvestmentResearchersApi.md#factor_library_spindex_factors_get) | **GET** /factor-library/spindex-factors | Get Spindex Factors
+[**factor_library_compass_questions_get**](docs/InvestmentResearchersApi.md#factor_library_compass_questions_get) | **GET** /factor-library/compass-questions | Get Compass Questions
+[**company_mapping_company_to_security_get**](docs/InvestmentResearchersApi.md#company_mapping_company_to_security_get) | **GET** /company-mapping/company-to-security | Company To Security
+[**auth_gettoken_post**](docs/InvestmentResearchersApi.md#auth_gettoken_post) | **POST** /auth/gettoken | Get Token
 
 ## Documentation For Models
 
@@ -147,7 +133,7 @@ Class | Method | HTTP request | Description
  - [InlineObject2](docs/InlineObject2.md)
  - [InlineObject3](docs/InlineObject3.md)
  - [InlineObject4](docs/InlineObject4.md)
- - [InlineResponse200](docs/InlineResponse200.md)
+ - [CompanyCompassReport](docs/CompanyCompassReport.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse20010](docs/InlineResponse20010.md)
  - [InlineResponse20010Data](docs/InlineResponse20010Data.md)
@@ -182,35 +168,35 @@ Class | Method | HTTP request | Description
  - [InlineResponse20019](docs/InlineResponse20019.md)
  - [InlineResponse2001Data](docs/InlineResponse2001Data.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
- - [InlineResponse20020](docs/InlineResponse20020.md)
- - [InlineResponse20020Data](docs/InlineResponse20020Data.md)
+ - [CompanySpinsightsReport](docs/CompanySpinsightsReport.md)
+ - [CompanySpinsightsReportData](docs/CompanySpinsightsReportData.md)
  - [InlineResponse20021](docs/InlineResponse20021.md)
  - [InlineResponse20021Data](docs/InlineResponse20021Data.md)
- - [InlineResponse20022](docs/InlineResponse20022.md)
- - [InlineResponse20022Data](docs/InlineResponse20022Data.md)
- - [InlineResponse20023](docs/InlineResponse20023.md)
- - [InlineResponse20023Data](docs/InlineResponse20023Data.md)
- - [InlineResponse20024](docs/InlineResponse20024.md)
- - [InlineResponse20024Data](docs/InlineResponse20024Data.md)
- - [InlineResponse20024DataSpinsightsContent](docs/InlineResponse20024DataSpinsightsContent.md)
- - [InlineResponse20025](docs/InlineResponse20025.md)
- - [InlineResponse20025Data](docs/InlineResponse20025Data.md)
- - [InlineResponse20025DataCompassContent](docs/InlineResponse20025DataCompassContent.md)
- - [InlineResponse20026](docs/InlineResponse20026.md)
- - [InlineResponse20026Data](docs/InlineResponse20026Data.md)
- - [InlineResponse20026DataQuestionAnswer](docs/InlineResponse20026DataQuestionAnswer.md)
- - [InlineResponse20027](docs/InlineResponse20027.md)
- - [InlineResponse20027Data](docs/InlineResponse20027Data.md)
- - [InlineResponse20028](docs/InlineResponse20028.md)
- - [InlineResponse20028Data](docs/InlineResponse20028Data.md)
- - [InlineResponse20029](docs/InlineResponse20029.md)
- - [InlineResponse20029Data](docs/InlineResponse20029Data.md)
+ - [TimeseriesCompanySpindex](docs/TimeseriesCompanySpindex.md)
+ - [TimeseriesCompanySpindexData](docs/TimeseriesCompanySpindexData.md)
+ - [InlineRecentCompanySpindex](docs/InlineRecentCompanySpindex.md)
+ - [InlineRecentCompanySpindexData](docs/InlineRecentCompanySpindexData.md)
+ - [CompanySpinsightsReportContent](docs/CompanySpinsightsReportContent.md)
+ - [CompanySpinsightsReportContentData](docs/CompanySpinsightsReportContentData.md)
+ - [CompanySpinsightsReportContentDataSpinsightsContent](docs/CompanySpinsightsReportContentDataSpinsightsContent.md)
+ - [CompanyCompassReportContent](docs/CompanyCompassReportContent.md)
+ - [CompanyCompassReportContentData](docs/CompanyCompassReportContentData.md)
+ - [CompanyCompassReportContentDataCompassContent](docs/CompanyCompassReportContentDataCompassContent.md)
+ - [CompanyQuestionAnswer](docs/CompanyQuestionAnswer.md)
+ - [CompanyQuestionAnswerData](docs/CompanyQuestionAnswerData.md)
+ - [CompanyQuestionAnswerDataQuestionAnswer](docs/CompanyQuestionAnswerDataQuestionAnswer.md)
+ - [CompanyMappingCompanyToSecurity](docs/CompanyMappingCompanyToSecurity.md)
+ - [CompanyMappingCompanyToSecurityData](docs/CompanyMappingCompanyToSecurityData.md)
+ - [FactorLibrarySpindexFactors](docs/FactorLibrarySpindexFactors.md)
+ - [FactorLibrarySpindexFactorsData](docs/FactorLibrarySpindexFactorsData.md)
+ - [FactorLibraryCompassQuestions](docs/FactorLibraryCompassQuestions.md)
+ - [FactorLibraryCompassQuestionsData](docs/FactorLibraryCompassQuestionsData.md)
  - [InlineResponse2002Data](docs/InlineResponse2002Data.md)
  - [InlineResponse2002DataQuestionContext](docs/InlineResponse2002DataQuestionContext.md)
  - [InlineResponse2002DataQuestions](docs/InlineResponse2002DataQuestions.md)
- - [InlineResponse2003](docs/InlineResponse2003.md)
- - [InlineResponse2003Data](docs/InlineResponse2003Data.md)
- - [InlineResponse2003DataSpinsightsExplorer](docs/InlineResponse2003DataSpinsightsExplorer.md)
+ - [CompanySpinsightsExplorer](docs/CompanySpinsightsExplorer.md)
+ - [CompanySpinsightsExplorerData](docs/CompanySpinsightsExplorerData.md)
+ - [CompanySpinsightsExplorerDataSpinsightsExplorer](docs/CompanySpinsightsExplorerDataSpinsightsExplorer.md)
  - [InlineResponse2004](docs/InlineResponse2004.md)
  - [InlineResponse2005](docs/InlineResponse2005.md)
  - [InlineResponse2005Data](docs/InlineResponse2005Data.md)
@@ -230,8 +216,6 @@ Class | Method | HTTP request | Description
  - [InlineResponse2009](docs/InlineResponse2009.md)
  - [InlineResponse2009Data](docs/InlineResponse2009Data.md)
  - [InlineResponse2009DataHighriskIndustries](docs/InlineResponse2009DataHighriskIndustries.md)
- - [InlineResponse200Data](docs/InlineResponse200Data.md)
+ - [CompanyCompassReportData](docs/CompanyCompassReportData.md)
  - [InlineResponse405](docs/InlineResponse405.md)
  - [InlineResponse405Errors](docs/InlineResponse405Errors.md)
- - [Pet](docs/Pet.md)
- - [Tag](docs/Tag.md)

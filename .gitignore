@@ -48,6 +48,8 @@ venv/
 .venv/
 .python-version
 .pytest_cache
+test/
+test-requirements.txt
 
 # Translations
 *.mo
@@ -67,9 +69,13 @@ target/
 
 # Configuration
 .env
-<<<<<<< HEAD
 *.toml
 setup.py
-=======
-*.toml
->>>>>>> 330a40ba1e064c0bdf3bab23b330d9bf01125f04
+setup.cfg
+.openapi_generator/
+.gitlab-ci.yml
+.openapi-generator-ignore
+.travis.yml
+git_push.sh
+tox.ini
+
