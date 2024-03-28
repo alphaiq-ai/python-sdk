@@ -78,24 +78,23 @@ def get_quant_linguistics_signals():
 
 All URIs are relative to *https://data.app.alphaiq.ai/api/v1/*
 
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*InvestmentResearchersApi* | [**get_bulk_mapping**](docs/InvestmentResearchersApi.md#get_bulk_mapping) | **GET** /bulk/mapping | BulkFileMapping
-*InvestmentResearchersApi* | [**get_bulk_model**](docs/InvestmentResearchersApi.md#get_bulk_model) | **GET** /bulk/models | BulkFileModels
-*InvestmentResearchersApi* | [**get_bulk_signals**](docs/InvestmentResearchersApi.md#get_bulk_signals) | **GET** /bulk/signals | BulkFileSignals
-*InvestmentResearchersApi* | [**get_bulk_signals_yearly**](docs/InvestmentResearchersApi.md#get_bulk_signals_yearly) | **GET** /bulk/signals/yearly | BulkFileSignalsYearly
-*InvestmentResearchersApi* | [**get_compass_report_pdf**](docs/InvestmentResearchersApi.md#get_compass_report_pdf) | **GET** /company/compass/reportPDF/{ticker} | CompassReportPDF
-*InvestmentResearchersApi* | [**get_spinsights_report_pdf**](docs/InvestmentResearchersApi.md#get_spinsights_report_pdf) | **GET** /company/spinsights/reportPDF/{ticker} | SpinsightsReportPDF
-*InvestmentResearchersApi* | [**get_compass_explorer_question_answer**](docs/InvestmentResearchersApi.md#get_compass_explorer_question_answer) | **GET** /generative/company/compass/questionContent/{ticker} | GetCompassExplorerQuestionAnswer
-*InvestmentResearchersApi* | [**get_compass_report_content**](docs/InvestmentResearchersApi.md#get_compass_report_content) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
-*InvestmentResearchersApi* | [**get_spinsights_explorer_spindex_summary**](docs/InvestmentResearchersApi.md#get_spinsights_explorer_spindex_summary) | **GET** /generative/company/spinsights/explorerContent/{ticker} | GetSpinsightsExplorerSpindexSummary
-*InvestmentResearchersApi* | [**get_spinsights_report_content**](docs/InvestmentResearchersApi.md#get_spinsights_report_content) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
-*InvestmentResearchersApi* | [**get_company_identifiers**](docs/InvestmentResearchersApi.md#get_company_identifiers) | **GET** /mapping/companyIdentifierMapping | MappingCompanyIdentifiers
-*InvestmentResearchersApi* | [**get_compass_questions**](docs/InvestmentResearchersApi.md#get_compass_questions) | **GET** /mapping/compassQuestions | MappingCompassQuestions
-*InvestmentResearchersApi* | [**get_spindex_factors**](docs/InvestmentResearchersApi.md#get_spindex_factors) | **GET** /mapping/spindexFactors | MappingSpindexFactors
-*InvestmentResearchersApi* | [**get_models_spindex**](docs/InvestmentResearchersApi.md#get_models_spindex) | **GET** /models/spindex | ModelsSpindex
-*InvestmentResearchersApi* | [**get_quant_linguistics_signals**](docs/InvestmentResearchersApi.md#get_quant_linguistics_signals) | **GET** /signals/quantLinguistics | SignalsQuantLinguistics
-
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**get_quant_linguistics_signals**](docs/InvestmentResearchersApi.md#get_quant_linguistics_signals) | **GET** /signals/quantLinguistics | SignalsQuantLinguistics
+[**get_bulk_signals**](docs/InvestmentResearchersApi.md#get_bulk_signals) | **GET** /bulk/signals | BulkFileSignals
+[**get_bulk_signals_yearly**](docs/InvestmentResearchersApi.md#get_bulk_signals_yearly) | **GET** /bulk/signals/yearly | BulkFileSignalsYearly
+[**get_models_spindex**](docs/InvestmentResearchersApi.md#get_models_spindex) | **GET** /models/spindex | ModelsSpindex
+[**get_bulk_model**](docs/InvestmentResearchersApi.md#get_bulk_model) | **GET** /bulk/models | BulkFileModels
+[**get_company_identifiers**](docs/InvestmentResearchersApi.md#get_company_identifiers) | **GET** /mapping/companyIdentifierMapping | MappingCompanyIdentifiers
+[**get_compass_questions**](docs/InvestmentResearchersApi.md#get_compass_questions) | **GET** /mapping/compassQuestions | MappingCompassQuestions
+[**get_spindex_factors**](docs/InvestmentResearchersApi.md#get_spindex_factors) | **GET** /mapping/spindexFactors | MappingSpindexFactors
+[**get_bulk_mapping**](docs/InvestmentResearchersApi.md#get_bulk_mapping) | **GET** /bulk/mapping | BulkFileMapping
+[**get_spinsights_explorer_spindex_summary**](docs/InvestmentResearchersApi.md#get_spinsights_explorer_spindex_summary) | **GET** /generative/company/spinsights/explorerContent/{ticker} | GetSpinsightsExplorerSpindexSummary
+[**get_spinsights_report_content**](docs/InvestmentResearchersApi.md#get_spinsights_report_content) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
+[**get_spinsights_report_pdf**](docs/InvestmentResearchersApi.md#get_spinsights_report_pdf) | **GET** /company/spinsights/reportPDF/{ticker} | SpinsightsReportPDF
+[**get_compass_explorer_question_answer**](docs/InvestmentResearchersApi.md#get_compass_explorer_question_answer) | **GET** /generative/company/compass/questionContent/{ticker} | GetCompassExplorerQuestionAnswer
+[**get_compass_report_content**](docs/InvestmentResearchersApi.md#get_compass_report_content) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
+[**get_compass_report_pdf**](docs/InvestmentResearchersApi.md#get_compass_report_pdf) | **GET** /company/compass/reportPDF/{ticker} | CompassReportPDF
 
 ## Documentation For Models
 

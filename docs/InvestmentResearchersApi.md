@@ -1,6 +1,6 @@
-# openapi_client.InvestmentResearchersApi
+# alphaiq_sdk.InvestmentResearchersApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://data.app.alphaiq.ai/api/v1/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
