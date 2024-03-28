@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**GenerativeCompanyCompassReportContentModel**](GenerativeCompanyCompassReportContentModel.md) |  | 
+**data** | [**GenerativeCompanyCompassReportContentModelData**](GenerativeCompanyCompassReportContentModelData.md) |  | 
 
 ## Example
 
 ```python
-from alphaiq_sdk.models.generative_company_compass_report_content_model import GenerativeCompanyCompassReportContentModel
+from openapi_client.models.generative_company_compass_report_content_model import GenerativeCompanyCompassReportContentModel
 
 # TODO update the JSON string below
 json = "{}"

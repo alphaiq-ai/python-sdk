@@ -38,130 +38,98 @@ import alphaiq_sdk
 
 # Getting Started
 
-It is advised to setup a ```.env``` file the store credentials. Documentation can be found [here](https://pypi.org/project/python-dotenv/). To use the ```.env``` file to store credentials, install the ```python-dotenv``` package with pip:
+It is advised to setup a ```.env``` file the store API key. Documentation can be found [here](https://pypi.org/project/python-dotenv/). To use the ```.env``` file to store credentials, install the ```python-dotenv``` package with pip:
 
 ```python
 pip install python-dotenv
 ```
 
 An example of the contents of the ```.env``` file are shown below:
-Note: The password should be Base64 encoded. Encoder can be found [here](https://www.base64encode.org/). 
 
 ```
-EMAIL=example@emaildomain.com
-PASSWORD=VGhpcyBpcyBteSBwYXNzd29yZCBlbmNvZGVkIHRvIEJhc2U2NCBmb3JtYXQ=
+APIKEY=keytoken123
 ```
 
-Please follow the [installation procedure](#installation) and then run the following to retrieve your bearer token for authentication to other API routes:
+Please follow the [installation procedure](#installation) and then you are ready to get started.
 
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+## get_quant_linguistics_signals
+def get_quant_linguistics_signals():
+    client = alphaiq_sdk.client(APIKEY)
+    ticker='TSLA'
+    startDate='2023-03-01'
+    endDate='2023-05-01'
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
+    response = client.get_quant_linguistics_signals(startDate,endDate,ticker=ticker)
 
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
+    return response
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://data.app.alphaiq.ai/api/v1/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*InvestmentResearchersApi* | [**bulk_mapping_get**](docs/InvestmentResearchersApi.md#bulk_mapping_get) | **GET** /bulk/mapping | BulkFileMapping
-*InvestmentResearchersApi* | [**bulk_models_get**](docs/InvestmentResearchersApi.md#bulk_models_get) | **GET** /bulk/models | BulkFileModels
-*InvestmentResearchersApi* | [**bulk_signals_get**](docs/InvestmentResearchersApi.md#bulk_signals_get) | **GET** /bulk/signals | BulkFileSignals
-*InvestmentResearchersApi* | [**bulk_signals_yearly_get**](docs/InvestmentResearchersApi.md#bulk_signals_yearly_get) | **GET** /bulk/signals/yearly | BulkFileSignalsYearly
-*InvestmentResearchersApi* | [**company_compass_report_pdf_ticker_get**](docs/InvestmentResearchersApi.md#company_compass_report_pdf_ticker_get) | **GET** /company/compass/reportPDF/{ticker} | CompassReportPDF
-*InvestmentResearchersApi* | [**company_spinsights_report_pdf_ticker_get**](docs/InvestmentResearchersApi.md#company_spinsights_report_pdf_ticker_get) | **GET** /company/spinsights/reportPDF/{ticker} | SpinsightsReportPDF
-*InvestmentResearchersApi* | [**generative_company_compass_question_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_compass_question_content_ticker_get) | **GET** /generative/company/compass/questionContent/{ticker} | GetCompassExplorerQuestionAnswer
-*InvestmentResearchersApi* | [**generative_company_compass_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_compass_report_content_ticker_get) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
-*InvestmentResearchersApi* | [**generative_company_spinsights_explorer_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_explorer_content_ticker_get) | **GET** /generative/company/spinsights/explorerContent/{ticker} | GetSpinsightsExplorer
-*InvestmentResearchersApi* | [**generative_company_spinsights_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_report_content_ticker_get) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
-*InvestmentResearchersApi* | [**mapping_company_identifier_mapping_get**](docs/InvestmentResearchersApi.md#mapping_company_identifier_mapping_get) | **GET** /mapping/companyIdentifierMapping | MappingCompanyIdentifiers
-*InvestmentResearchersApi* | [**mapping_compass_questions_get**](docs/InvestmentResearchersApi.md#mapping_compass_questions_get) | **GET** /mapping/compassQuestions | MappingCompassQuestions
-*InvestmentResearchersApi* | [**mapping_spindex_factors_get**](docs/InvestmentResearchersApi.md#mapping_spindex_factors_get) | **GET** /mapping/spindexFactors | MappingSpindexFactors
-*InvestmentResearchersApi* | [**models_spindex_get**](docs/InvestmentResearchersApi.md#models_spindex_get) | **GET** /models/spindex | ModelsSpindex
-*InvestmentResearchersApi* | [**signals_quant_linguistics_get**](docs/InvestmentResearchersApi.md#signals_quant_linguistics_get) | **GET** /signals/quantLinguistics | SignalsQuantLinguistics
+*InvestmentResearchersApi* | [**get_bulk_mapping**](docs/InvestmentResearchersApi.md#get_bulk_mapping) | **GET** /bulk/mapping | BulkFileMapping
+*InvestmentResearchersApi* | [**get_bulk_model**](docs/InvestmentResearchersApi.md#get_bulk_model) | **GET** /bulk/models | BulkFileModels
+*InvestmentResearchersApi* | [**get_bulk_signals**](docs/InvestmentResearchersApi.md#get_bulk_signals) | **GET** /bulk/signals | BulkFileSignals
+*InvestmentResearchersApi* | [**get_bulk_signals_yearly**](docs/InvestmentResearchersApi.md#get_bulk_signals_yearly) | **GET** /bulk/signals/yearly | BulkFileSignalsYearly
+*InvestmentResearchersApi* | [**get_compass_report_pdf**](docs/InvestmentResearchersApi.md#get_compass_report_pdf) | **GET** /company/compass/reportPDF/{ticker} | CompassReportPDF
+*InvestmentResearchersApi* | [**get_spinsights_report_pdf**](docs/InvestmentResearchersApi.md#get_spinsights_report_pdf) | **GET** /company/spinsights/reportPDF/{ticker} | SpinsightsReportPDF
+*InvestmentResearchersApi* | [**get_compass_explorer_question_answer**](docs/InvestmentResearchersApi.md#get_compass_explorer_question_answer) | **GET** /generative/company/compass/questionContent/{ticker} | GetCompassExplorerQuestionAnswer
+*InvestmentResearchersApi* | [**get_compass_report_content**](docs/InvestmentResearchersApi.md#get_compass_report_content) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
+*InvestmentResearchersApi* | [**get_spinsights_explorer_spindex_summary**](docs/InvestmentResearchersApi.md#get_spinsights_explorer_spindex_summary) | **GET** /generative/company/spinsights/explorerContent/{ticker} | GetSpinsightsExplorerSpindexSummary
+*InvestmentResearchersApi* | [**get_spinsights_report_content**](docs/InvestmentResearchersApi.md#get_spinsights_report_content) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
+*InvestmentResearchersApi* | [**get_company_identifiers**](docs/InvestmentResearchersApi.md#get_company_identifiers) | **GET** /mapping/companyIdentifierMapping | MappingCompanyIdentifiers
+*InvestmentResearchersApi* | [**get_compass_questions**](docs/InvestmentResearchersApi.md#get_compass_questions) | **GET** /mapping/compassQuestions | MappingCompassQuestions
+*InvestmentResearchersApi* | [**get_spindex_factors**](docs/InvestmentResearchersApi.md#get_spindex_factors) | **GET** /mapping/spindexFactors | MappingSpindexFactors
+*InvestmentResearchersApi* | [**get_models_spindex**](docs/InvestmentResearchersApi.md#get_models_spindex) | **GET** /models/spindex | ModelsSpindex
+*InvestmentResearchersApi* | [**get_quant_linguistics_signals**](docs/InvestmentResearchersApi.md#get_quant_linguistics_signals) | **GET** /signals/quantLinguistics | SignalsQuantLinguistics
 
 
 ## Documentation For Models
 
- - [BulkMappingGet200Response](docs/BulkMappingGet200Response.md)
- - [BulkMappingGet200ResponseData](docs/BulkMappingGet200ResponseData.md)
  - [CompanyInfoModel](docs/CompanyInfoModel.md)
- - [CompanyMappingCompanyToSecurityModel](docs/CompanyMappingCompanyToSecurityModel.md)
- - [CompanySpinsightsReportPDFTickerGet404Response](docs/CompanySpinsightsReportPDFTickerGet404Response.md)
- - [CompanySpinsightsReportPDFTickerGet404ResponseErrorsInner](docs/CompanySpinsightsReportPDFTickerGet404ResponseErrorsInner.md)
- - [FactorLibraryCompassQuestionsModel](docs/FactorLibraryCompassQuestionsModel.md)
- - [FactorLibrarySpindexFactorsModel](docs/FactorLibrarySpindexFactorsModel.md)
+ - [CompanyInfoModel1](docs/CompanyInfoModel1.md)
+ - [FactorLibrarySpindexFactorsDataItems](docs/FactorLibrarySpindexFactorsDataItems.md)
  - [FileDownloadModel](docs/FileDownloadModel.md)
  - [FileDownloadModel1](docs/FileDownloadModel1.md)
+ - [FileDownloadModelData](docs/FileDownloadModelData.md)
+ - [FileDownloadModelData1](docs/FileDownloadModelData1.md)
  - [GenerativeCompanyCompassReportContentModel](docs/GenerativeCompanyCompassReportContentModel.md)
- - [GenerativeCompanyCompassReportContentModelCompassContent](docs/GenerativeCompanyCompassReportContentModelCompassContent.md)
+ - [GenerativeCompanyCompassReportContentModelData](docs/GenerativeCompanyCompassReportContentModelData.md)
+ - [GenerativeCompanyCompassReportContentModelDataCompassContent](docs/GenerativeCompanyCompassReportContentModelDataCompassContent.md)
  - [GenerativeCompanyQuestionAnswerModel](docs/GenerativeCompanyQuestionAnswerModel.md)
- - [GenerativeCompanyQuestionAnswerModelQuestionAnswerInner](docs/GenerativeCompanyQuestionAnswerModelQuestionAnswerInner.md)
+ - [GenerativeCompanyQuestionAnswerModelData](docs/GenerativeCompanyQuestionAnswerModelData.md)
+ - [GenerativeCompanyQuestionAnswerModelDataQuestionAnswerItems](docs/GenerativeCompanyQuestionAnswerModelDataQuestionAnswerItems.md)
  - [GenerativeCompanySpinsightsExplorerModel](docs/GenerativeCompanySpinsightsExplorerModel.md)
- - [GenerativeCompanySpinsightsExplorerModelSpinsightsExplorerInner](docs/GenerativeCompanySpinsightsExplorerModelSpinsightsExplorerInner.md)
+ - [GenerativeCompanySpinsightsExplorerModelData](docs/GenerativeCompanySpinsightsExplorerModelData.md)
+ - [GenerativeCompanySpinsightsExplorerModelDataSpinsightsExplorerItems](docs/GenerativeCompanySpinsightsExplorerModelDataSpinsightsExplorerItems.md)
  - [GenerativeCompanySpinsightsReportContentModel](docs/GenerativeCompanySpinsightsReportContentModel.md)
- - [GenerativeCompanySpinsightsReportContentModelSpinsightsContent](docs/GenerativeCompanySpinsightsReportContentModelSpinsightsContent.md)
+ - [GenerativeCompanySpinsightsReportContentModelData](docs/GenerativeCompanySpinsightsReportContentModelData.md)
+ - [GenerativeCompanySpinsightsReportContentModelDataSpinsightsContent](docs/GenerativeCompanySpinsightsReportContentModelDataSpinsightsContent.md)
+ - [MappingCompanyIdentifierMappingModel](docs/MappingCompanyIdentifierMappingModel.md)
+ - [MappingCompanyIdentifierMappingModelDataItems](docs/MappingCompanyIdentifierMappingModelDataItems.md)
+ - [MappingCompassQuestionsModel](docs/MappingCompassQuestionsModel.md)
+ - [MappingCompassQuestionsModelDataItems](docs/MappingCompassQuestionsModelDataItems.md)
+ - [MappingSpindexFactorsModel](docs/MappingSpindexFactorsModel.md)
  - [ModelsSpindexModel](docs/ModelsSpindexModel.md)
- - [ModelsSpindexSpindexModelInner](docs/ModelsSpindexSpindexModelInner.md)
- - [SignalsQuantLinguisticsModel](docs/SignalsQuantLinguisticsModel.md)
- - [SignalsQuantLinguisticsSignalsModelInner](docs/SignalsQuantLinguisticsSignalsModelInner.md)
+ - [ModelsSpindexModelData](docs/ModelsSpindexModelData.md)
+ - [ModelsSpindexModelItems](docs/ModelsSpindexModelItems.md)
+ - [SignalsQuantLinguisticsModelData](docs/SignalsQuantLinguisticsModelData.md)
+ - [SignalsQuantLinguisticsModelRoot](docs/SignalsQuantLinguisticsModelRoot.md)
+ - [SignalsQuantLinguisticsSignalsModel2](docs/SignalsQuantLinguisticsSignalsModel2.md)
 
+# bearer
 
-<a id="documentation-for-authorization"></a>
-## Documentation For Authorization
-
-
-Authentication schemes defined for the API:
-<a id="bearer"></a>
-### bearer
-
-- **Type**: Bearer authentication
-
-
-## Author
+Authorization is a bearer token. That bearer token is your API key.

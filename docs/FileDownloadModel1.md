@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**FileDownloadModel1**](FileDownloadModel1.md) |  | 
+**data** | [**FileDownloadModelData1**](FileDownloadModelData1.md) |  | 
 
 ## Example
 
 ```python
-from alphaiq_sdk.models.file_download_model1 import FileDownloadModel1
+from openapi_client.models.file_download_model1 import FileDownloadModel1
 
 # TODO update the JSON string below
 json = "{}"

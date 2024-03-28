@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**GenerativeCompanySpinsightsReportContentModel**](GenerativeCompanySpinsightsReportContentModel.md) |  | 
+**data** | [**GenerativeCompanySpinsightsReportContentModelData**](GenerativeCompanySpinsightsReportContentModelData.md) |  | 
 
 ## Example
 
 ```python
-from alphaiq_sdk.models.generative_company_spinsights_report_content_model import GenerativeCompanySpinsightsReportContentModel
+from openapi_client.models.generative_company_spinsights_report_content_model import GenerativeCompanySpinsightsReportContentModel
 
 # TODO update the JSON string below
 json = "{}"

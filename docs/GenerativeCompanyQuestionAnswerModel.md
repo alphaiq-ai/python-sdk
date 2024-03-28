@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**GenerativeCompanyQuestionAnswerModel**](GenerativeCompanyQuestionAnswerModel.md) |  | 
+**data** | [**GenerativeCompanyQuestionAnswerModelData**](GenerativeCompanyQuestionAnswerModelData.md) |  | 
 
 ## Example
 
 ```python
-from alphaiq_sdk.models.generative_company_question_answer_model import GenerativeCompanyQuestionAnswerModel
+from openapi_client.models.generative_company_question_answer_model import GenerativeCompanyQuestionAnswerModel
 
 # TODO update the JSON string below
 json = "{}"

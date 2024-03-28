@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**ModelsSpindexModel**](ModelsSpindexModel.md) |  | 
+**data** | [**ModelsSpindexModelData**](ModelsSpindexModelData.md) |  | 
 
 ## Example
 
 ```python
-from alphaiq_sdk.models.models_spindex_model import ModelsSpindexModel
+from openapi_client.models.models_spindex_model import ModelsSpindexModel
 
 # TODO update the JSON string below
 json = "{}"
