@@ -1,113 +1,80 @@
 # alphaiq_sdk.InvestmentResearchersApi
 
-All URIs are relative to *https://data.app.alphaiq.ai/api/v1*
+All URIs are relative to *https://data.app.alphaiq.ai/api/v1/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**company_spindex_get_latest_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_overall_risk_get) | **GET** /company-spindex/getLatestSpindexOverallRisk | Get Latest Spindex Overall Risk
-[**company_spindex_get_timeseries_spindex_overall_risk_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_overall_risk_get) | **GET** /company-spindex/getTimeseriesSpindexOverallRisk | Get Timeseries Spindex Overall Risk
-[**company_spindex_get_latest_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_latest_spindex_factors_get) | **GET** /company-spindex/getLatestSpindexFactors | Get Latest Spindex Factors
-[**company_spindex_get_timeseries_spindex_factors_get**](docs/InvestmentResearchersApi.md#company_spindex_get_timeseries_spindex_factors_get) | **GET** /company-spindex/getTimeseriesSpindexFactors | Get Timeseries Spindex Factors
-[**generative_company_spinsights_explorer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_explorer_ticker_get) | **GET** /generative/company/spinsights/explorer/{ticker} | Get Spinsights Explorer
-[**generative_company_question_answer_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_question_answer_ticker_get) | **GET** /generative/company/questionAnswer/{ticker} | Get Compass Explorer Question Answer
-[**generative_company_spinsights_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_spinsights_report_content_ticker_get) | **GET** /generative/company/spinsights/reportContent/{ticker} | Get Spinsights Report Content
-[**generative_company_compass_report_content_ticker_get**](docs/InvestmentResearchersApi.md#generative_company_compass_report_content_ticker_get) | **GET** /generative/company/compass/reportContent/{ticker} | Get Compass Report Content
-[**company_spinsights_report_ticker_get**](docs/InvestmentResearchersApi.md#company_spinsights_report_ticker_get) | **GET** /company/spinsights/report/{ticker} | Spinsights Report PDF
-[**company_compass_report_ticker_get**](docs/InvestmentResearchersApi.md#company_compass_report_ticker_get) | **GET** /company/compass/report/{ticker} | Compass Report PDF
-[**factor_library_spindex_factors_get**](docs/InvestmentResearchersApi.md#factor_library_spindex_factors_get) | **GET** /factor-library/spindex-factors | Get Spindex Factors
-[**factor_library_compass_questions_get**](docs/InvestmentResearchersApi.md#factor_library_compass_questions_get) | **GET** /factor-library/compass-questions | Get Compass Questions
-[**company_mapping_company_to_security_get**](docs/InvestmentResearchersApi.md#company_mapping_company_to_security_get) | **GET** /company-mapping/company-to-security | Company To Security
-[**auth_gettoken_post**](docs/InvestmentResearchersApi.md#auth_gettoken_post) | **POST** /auth/gettoken | Get Token
+[**get_quant_linguistics_signals**](InvestmentResearchersApi.md#get_quant_linguistics_signals) | **GET** /signals/quantLinguistics | SignalsQuantLinguistics
+[**get_bulk_signals**](InvestmentResearchersApi.md#get_bulk_signals) | **GET** /bulk/signals | BulkFileSignals
+[**get_bulk_signals_yearly**](InvestmentResearchersApi.md#get_bulk_signals_yearly) | **GET** /bulk/signals/yearly | BulkFileSignalsYearly
+[**get_models_spindex**](InvestmentResearchersApi.md#get_models_spindex) | **GET** /models/spindex | ModelsSpindex
+[**get_bulk_model**](InvestmentResearchersApi.md#get_bulk_model) | **GET** /bulk/models | BulkFileModels
+[**get_company_identifiers**](InvestmentResearchersApi.md#get_company_identifiers) | **GET** /mapping/companyIdentifierMapping | MappingCompanyIdentifiers
+[**get_compass_questions**](InvestmentResearchersApi.md#get_compass_questions) | **GET** /mapping/compassQuestions | MappingCompassQuestions
+[**get_spindex_factors**](InvestmentResearchersApi.md#get_spindex_factors) | **GET** /mapping/spindexFactors | MappingSpindexFactors
+[**get_bulk_mapping**](InvestmentResearchersApi.md#get_bulk_mapping) | **GET** /bulk/mapping | BulkFileMapping
+[**get_spinsights_explorer_spindex_summary**](InvestmentResearchersApi.md#get_spinsights_explorer_spindex_summary) | **GET** /generative/company/spinsights/explorerContent/{ticker} | GetSpinsightsExplorerSpindexSummary
+[**get_spinsights_report_content**](InvestmentResearchersApi.md#get_spinsights_report_content) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
+[**get_spinsights_report_pdf**](InvestmentResearchersApi.md#get_spinsights_report_pdf) | **GET** /company/spinsights/reportPDF/{ticker} | SpinsightsReportPDF
+[**get_compass_explorer_question_answer**](InvestmentResearchersApi.md#get_compass_explorer_question_answer) | **GET** /generative/company/compass/questionContent/{ticker} | GetCompassExplorerQuestionAnswer
+[**get_compass_report_content**](InvestmentResearchersApi.md#get_compass_report_content) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
+[**get_compass_report_pdf**](InvestmentResearchersApi.md#get_compass_report_pdf) | **GET** /company/compass/reportPDF/{ticker} | CompassReportPDF
 
-# **company_spindex_get_latest_spindex_overall_risk_get**
-> InlineRecentCompanySpindex company_spindex_get_latest_spindex_overall_risk_get(ticker)
+# **get_quant_linguistics_signals**
+> SignalsQuantLinguisticsModelRoot get_quant_linguistics_signals(start_date, end_date, consilience_id=consilience_id, ticker=ticker, cik=cik, lei=lei, isin=isin, cusip=cusip, sedol=sedol)
 
-Get the latest overall risk score for a company using the company's ticker.
+SignalsQuantLinguistics
+
+Provides a signal for each of the Quantitative Linguistics signal groupings. These signals represent the aggregation of all the underlying signals. Query using one and only one nof the company identifiers (ConsilienceId, Ticker, CIK, LEI, ISIN, CUSIP, SEDOL). Note: currently a sample dataset for 2023 only.
 
 ### Example
 
-This API allows the user to get the latest overall risk score for a company using the company's ticker. An example is shown below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+ticker='TSLA'
+startDate='2023-03-01'
+endDate='2023-05-01'
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
+response = client.get_quant_linguistics_signals(startDate,endDate,ticker=ticker)
 
-with alphaiq_sdk.ApiClient(configuration) as api_client:
+print(response)
 
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    ticker = 'TSLA' 
-
-    try:
-        # Get the latest overall risk score from the API
-        api_response = api_instance.company_spindex_get_latest_spindex_overall_risk_get(
-            ticker=ticker
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ticker** | **str**| The ticker that corresponds to the company that you want to pull the latest overall risk score for. | 
+ **start_date** | **str**| Starting date of desired timeseries (YYYY-MM-DD) | 
+ **end_date** | **str**| Ending date of desired timeseries (YYYY-MM-DD) | 
+ **consilience_id** | **str**| Internal custom company identifier | [optional] 
+ **ticker** | **str**| Ticker of the company/security | [optional] 
+ **cik** | **str**| Central indexing key (CIK) used by SEC&#39;s EDGAR database | [optional] 
+ **lei** | **str**| Legal entity identifier (LEI) | [optional] 
+ **isin** | [**List[str]**](str.md)| International Securities Identification Number (ISIN) | [optional] 
+ **cusip** | **str**| Committee on Uniform Securities Identification Procedures (CUSIP) | [optional] 
+ **sedol** | **str**| Stock exchange daily official list (SEDOL) | [optional] 
 
 ### Return type
 
-[**InlineRecentCompanySpindex**](InlineRecentCompanySpindex.md)
+[**SignalsQuantLinguisticsModelRoot**](SignalsQuantLinguisticsModelRoot.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -115,110 +82,60 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **company_spindex_get_timeseries_spindex_overall_risk_get**
-> TimeseriesCompanySpindex company_spindex_get_timeseries_spindex_overall_risk_get(ticker, start_date, end_date)
 
-Get the timeseries of a company's overall spindex score.
+
+# **get_bulk_signals**
+> FileDownloadModel1 get_bulk_signals(strategy_type)
+
+BulkFileSignals
+
+Delivers historical signal data files (2013-2023) as a zipped folder of gzipped csv files. Delivered as a temporary download link. Files determined based on signal strategy type (long, short, longshort).
 
 ### Example
 
-This API allows us to get a timeseries of the overall risk spindex factor for a company using the company's ticker. An example is shown below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+strategyType = 'long'
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
+response = client.get_bulk_signals(strategyType)
 
-with alphaiq_sdk.ApiClient(configuration) as api_client:
+print(response)
 
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    ticker = 'TSLA'
-    start_date = '2024-01-01'
-    end_date = '2024-01-20'
-
-    try:
-
-        # Query the API to get the timeseries of the overall risk spindex factor from 2024-01-01 to 2024-01-20 for Tesla
-        api_response = api_instance.company_spindex_get_timeseries_spindex_overall_risk_get(
-            ticker=ticker,
-            start_date=start_date,
-            end_date=end_date
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ticker** | **str**| The ticker that corresponds to the company that you want to pull time series data for. | 
- **start_date** | **str**| The start date for the time series you wish to pull (in the format YYYY-MM-DD). | 
- **end_date** | **str**| The end date for the time series you wish to pull (in the format YYYY-MM-DD). | 
+ **strategy_type** | **str**| Type of strategy signals are used for (\&quot;long\&quot;, \&quot;short\&quot;, \&quot;longshort\&quot;) | 
 
 ### Return type
 
-[**TimeseriesCompanySpindex**](TimeseriesCompanySpindex.md)
+[**FileDownloadModel1**](FileDownloadModel1.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -226,120 +143,62 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **company_spindex_get_latest_spindex_factors_get**
-> InlineRecentCompanySpindex company_spindex_get_latest_spindex_factors_get(ticker=ticker, signal_id=signal_id)
 
-Get the latest spindex factors for a company using the company ticker.
+# **get_bulk_signals_yearly**
+> FileDownloadModel1 get_bulk_signals_yearly(strategy_type, alpha_horizon, year)
+
+BulkFileSignalsYearly
+
+Delivers yearly signal files as a gzipped csv files. Delivered as a temporary download link. Files determined based on year, alpha horizon (4 week increments between 4 and 52 weeks) and signal strategy type (long, short, longshort).
 
 ### Example
 
-This API allows us to get all of the latest spindex factors for a company using the company ticker. Alternatively, we can filter down to a single spindex factor as well. An example is shown below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+strategyType = 'long'
+alphaHorizon = '4-week'
+year=2023
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
+response = client.get_bulk_signals_yearly(strategyType, alphaHorizon, year)
+print(response)
 
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-# Enter a context with an instance of the API client
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    ticker = 'TSLA' # str |  (optional)
-    signal_id = 'UNCERTAIN-VALUE' # str |  (optional)
-
-    try:
-
-        # Query the API to get all of the most recent spindex factors for Tesla
-        api_response = api_instance.company_spindex_get_latest_spindex_factors_get(
-            ticker=ticker
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    try:
-
-        # Query the API to get the most recent "uncertain" score for Tesla
-        api_response = api_instance.company_spindex_get_latest_spindex_factors_get(
-            ticker=ticker,
-            signal_id=signal_id
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ticker** | **str**|  | [optional] 
- **signal_id** | **str**|  | [optional] 
+ **strategy_type** | **str**| Type of strategy signals are used for (\&quot;long\&quot;, \&quot;short\&quot;, \&quot;longshort\&quot;) | 
+ **alpha_horizon** | **str**| 4-week investment horizon intervals from 4-week to 52-week (e.g. \&quot;4-week\&quot;, \&quot;8-week\&quot;, \&quot;12-week\&quot;) | 
+ **year** | **str**| Year of historical signals between 2014-2023 | 
 
 ### Return type
 
-[**InlineRecentCompanySpindex**](InlineRecentCompanySpindex.md)
+[**FileDownloadModel1**](FileDownloadModel1.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -347,128 +206,69 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **company_spindex_get_timeseries_spindex_factors_get**
-> TimeseriesCompanySpindex company_spindex_get_timeseries_spindex_factors_get(ticker, start_date, end_date, signal_id=signal_id)
 
-Get the timeseries of spindex factors for a company by providing the ticker, start and end date.
+# **get_models_spindex**
+> ModelsSpindexModel get_models_spindex(raw_smooth_flag, start_date, end_date, consilience_id=consilience_id, ticker=ticker, cik=cik, lei=lei, isin=isin, cusip=cusip, sedol=sedol)
+
+ModelsSpindex
+
+Delivers SPINDEX scores for a variety of company identifiers (ConsilienceId, Ticker, CIK, LEI, ISIN, CUSIP, SEDOL). Provides the raw or smooth version of the model.
 
 ### Example
 
-This API allows us to get a timeseries of the spindex factors for a given company. We can get all spindex factors or filter to only a single factor by providing a signal ID. An example is shown below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+ticker='TSLA'
+rawSmoothFlag = 'raw'
+startDate='2023-03-01'
+endDate='2023-05-01'
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    ticker = 'AAPL'
-    start_date = '2024-01-01'
-    end_date = '2024-02-09'
-    signal_id = 'CONSTRAINED-VALUE'
-
-    try:
-
-        # Query the API to get the timeseries of constrained spindex factors from 2024-01-01 to 2024-02-09 for Apple
-        api_response = api_instance.company_spindex_get_timeseries_spindex_factors_get(
-            ticker=ticker,
-            start_date=start_date,
-            end_date=end_date,
-            signal_id=signal_id
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    try:
-
-        # Query the API to get the timeseries of ALL spindex factors from 2024-01-01 to 2024-02-09 for Apple
-        api_response = api_instance.company_spindex_get_timeseries_spindex_factors_get(
-            ticker=ticker,
-            start_date=start_date,
-            end_date=end_date
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
+response = client.get_models_spindex(rawSmoothFlag,startDate,endDate,ticker=ticker)
+print(response)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ticker** | **str**| The ticker that corresponds to the company that you want to pull time series data for. | 
- **start_date** | **str**| The start date for the time series you wish to pull (in the format YYYY-MM-DD). | 
- **end_date** | **str**| The end date for the time series you wish to pull (in the format YYYY-MM-DD).. | 
- **signal_id** | **str**| The signal ID that you want to filter to. If not provided, all available signals will be returned by the API. | [optional] 
+ **raw_smooth_flag** | **str**| Flag for raw or smooth version of the model (\&quot;raw\&quot;, \&quot;smooth\&quot;) | 
+ **start_date** | **str**| Starting date of desired timeseries (YYYY-MM-DD) | 
+ **end_date** | **str**| Ending date of desired timeseries (YYYY-MM-DD) | 
+ **consilience_id** | **str**| Internal custom company identifier | [optional] 
+ **ticker** | **str**| Ticker of the company/security | [optional] 
+ **cik** | **str**| Central indexing key (CIK) used by SEC&#39;s EDGAR database | [optional] 
+ **lei** | **str**| Legal entity identifier (LEI) | [optional] 
+ **isin** | **str**| International Securities Identification Number (ISIN) | [optional] 
+ **cusip** | **str**| Committee on Uniform Securities Identification Procedures (CUSIP) | [optional] 
+ **sedol** | **str**| Stock exchange daily official list (SEDOL) | [optional] 
 
 ### Return type
 
-[**TimeseriesCompanySpindex**](TimeseriesCompanySpindex.md)
+[**ModelsSpindexModel**](ModelsSpindexModel.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -476,102 +276,63 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generative_company_spinsights_explorer_ticker_get**
-> CompanySpinsightsExplorer generative_company_spinsights_explorer_ticker_get(ticker)
 
-Get the most recent generative SPINSIGHTS Explorer data for a company. This content explains the underlying drivers of the 9 SPINDEX Factors.
+
+# **get_bulk_model**
+> FileDownloadModel1 get_bulk_model(raw_smooth_flag, model_name)
+
+BulkFileModels
+
+Delivers historical model data files (2013-2023) as a gzipped csv file. Delivered as a temporary download link.
 
 ### Example
 
-This API allows the user to get the most recent generative SPINSIGHTS Explorer data for a company. An example is shown below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+rawSmoothFlag = 'raw'
+modelName = 'spindex'
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
+response = client.get_bulk_model(rawSmoothFlag,modelName)
 
-with alphaiq_sdk.ApiClient(configuration) as api_client:
 
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
+print(response)
 
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    ticker = 'WMT' 
-
-    try:
-
-        # Query the API to get the Spinsights report content
-        api_response = api_instance.generative_company_spinsights_explorer_ticker_get(
-            ticker=ticker
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ticker** | **str**|  | 
+ **raw_smooth_flag** | **str**| Flag for raw or smooth version of the model (\&quot;raw\&quot;, \&quot;smooth\&quot;) | 
+ **model_name** | **str**| Name of the model (\&quot;spindex\&quot;) | 
 
 ### Return type
 
-[**CompanySpinsightsExplorer**](CompanySpinsightsExplorer.md)
+[**FileDownloadModel1**](FileDownloadModel1.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -579,102 +340,63 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generative_company_question_answer_ticker_get**
-> CompanyQuestionAnswer generative_company_question_answer_ticker_get(ticker)
 
-Get the COMPASS Explorer Question & Answer results.
+# **get_company_identifiers**
+> MappingCompanyIdentifierMappingModel get_company_identifiers(ticker=ticker, cik=cik, consilience_id=consilience_id, lei=lei, isin=isin, cusip=cusip, sedol=sedol)
+
+MappingCompanyIdentifiers
+
+Delivers mapping data for company based on variety of potential identifiers (ConsilienceID, Ticker, CIK, LEI, ISIN, CUSIP, SEDOL)
 
 ### Example
 
-This API allows a user to query the question/answer portion of a COMPASS Explorer using the company's ticker. An example is shown below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+ticker = 'TSLA'
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    ticker = 'WMT'
-
-    try:
-
-        # Query the API to retrieve the question/answer content from Walmart's report
-        api_response = api_instance.generative_company_question_answer_ticker_get(
-            ticker=ticker
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
+response = client.get_company_identifiers(ticker)
+print(response)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ticker** | **str**|  | 
+ **ticker** | **str**| Ticker of the company/security | [optional] 
+ **cik** | **str**| Central indexing key (CIK) used by SEC&#39;s EDGAR database | [optional] 
+ **consilience_id** | **str**| Internal custom company identifier | [optional] 
+ **lei** | **str**| Legal entity identifier (LEI) | [optional] 
+ **isin** | **str**| International Securities Identification Number (ISIN) | [optional] 
+ **cusip** | **str**| Committee on Uniform Securities Identification Procedures (CUSIP) | [optional] 
+ **sedol** | **str**| Stock exchange daily official list (SEDOL) | [optional] 
 
 ### Return type
 
-[**CompanyQuestionAnswer**](CompanyQuestionAnswer.md)
+[**MappingCompanyIdentifierMappingModel**](MappingCompanyIdentifierMappingModel.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -682,104 +404,52 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generative_company_spinsights_report_content_ticker_get**
-> CompanySpinsightsReportContent generative_company_spinsights_report_content_ticker_get(ticker)
 
-Get the most recent SPINSIGHTS report content for a company. This report content specifically highlights the company's language which is more prominent than peers.
+# **get_bulk_mapping**
+> FileDownloadModel1 get_bulk_mapping()
 
-Note: the \"SPINDEX Summary\" is present in this report endpoint but not the GetCompassReportContent. This should avoid duplicate information.
+BulkFileMapping
+
+Delivers gzipped csv file containing company mapping information (ConsilienceId, CIK, LEI, Ticker, Company Name)
 
 ### Example
 
-This API allows a user to get the most recent SPINSIGHTS report content for a company by providing the company's ticker. An example is included below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
-
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    ticker = 'WMT' 
-
-    try:
-
-        # Query the API to get the Spinsights report content
-        api_response = api_instance.generative_company_spinsights_report_content_ticker_get(
-            ticker=ticker
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
+response = client.get_bulk_mapping()
+print(response)
 ```
+
+
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ticker** | **str**|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**CompanySpinsightsReportContent**](CompanySpinsightsReportContent.md)
+[**FileDownloadModel1**](FileDownloadModel1.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -787,411 +457,43 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generative_company_compass_report_content_ticker_get**
-> CompanyCompassReportContent generative_company_compass_report_content_ticker_get(ticker)
 
-Get the content generated for the COMPASS PDF report.
+# **get_spindex_factors**
+> MappingSpindexFactorsModel get_spindex_factors(spindex_id=spindex_id)
 
-### Example
+MappingSpindexFactors
 
-This API allows the user to retrieve the content from the Compass Report for a given company programmatically.
-```python
-import os
-
-from dotenv import load_dotenv
-import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
-
-# Load the environment variables from the .env file
-load_dotenv()
-
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
-
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type=content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    ticker = 'WMT'
-
-    try:
-
-        # Query the API to retrieve the content from Walmart's Compass report
-        api_response = api_instance.generative_company_compass_report_content_ticker_get(ticker)
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ticker** | **str**|  | 
-
-### Return type
-
-[**CompanyCompassReportContent**](CompanyCompassReportContent.md)
-
-### Authorization
-
-[bearer via /auth/gettoken API](#auth_gettoken_post)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **company_spinsights_report_ticker_get**
-> CompanySpinsightsReport company_spinsights_report_ticker_get(ticker)
-
-Get a pre-signed URL for a company's generative SPINSIGHTS PDF report.
+Delivers descriptions of SPINDEX factors
 
 ### Example
 
-This API allows the user to retrieve a download link for the SPINSIGHTS PDF report for a company. An example is provided below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
-
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    ticker = 'TSLA' 
-
-    try:
-
-        # Query the API to get a link to the SpinsightsReport PDF for a given company
-        api_response = api_instance.company_spinsights_report_ticker_get(
-            ticker=ticker
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
+response = client.get_spindex_factors()
+print(response)
 ```
+
+
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ticker** | **str**| Ticker identifier corresponding to a security or company | 
-
-### Return type
-
-[**CompanySpinsightsReport**](CompanySpinsightsReport.md)
-
-### Authorization
-
-[bearer via /auth/gettoken API](#auth_gettoken_post)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**404** | InsufficientPermissions |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **company_compass_report_ticker_get**
-> CompanyCompassReport company_compass_report_ticker_get(ticker)
-
-Get pre-signed URL for a company's generative COMPASS PDF report
-
-### Example
-
-This API allows the user to retrieve a download link for the COMPASS PDF report for a company. An example is provided below:
-```python
-import os
-
-from dotenv import load_dotenv
-import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
-
-# Load the environment variables from the .env file
-load_dotenv()
-
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
-
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    ticker = 'TSLA' 
-
-    try:
-
-        # Query the API to get a link to the report for a given company
-        api_response = api_instance.company_compass_report_ticker_get(
-            ticker=ticker
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ticker** | **str**| Ticker identifier corresponding to a security or company | 
-
-### Return type
-
-[**CompanyCompassReport**](CompanyCompassReport.md)
-
-### Authorization
-
-[bearer via /auth/gettoken API](#auth_gettoken_post)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**404** | InsufficientPermissions |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **factor_library_spindex_factors_get**
-> FactorLibrarySpindexFactors factor_library_spindex_factors_get(spindex_id=spindex_id)
-
-Get a list of the spindex factors.
-
-### Example
-
-This API allows the user to query the spindex factors and descriptions. Optionally, they can filter to a single factor as well. An example is shown below:
-```python
-import os
-
-from dotenv import load_dotenv
-import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
-
-# Load the environment variables from the .env file
-load_dotenv()
-
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
-
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    spindex_id = 'uncertain'
-
-    try:
-
-        # Query the API to get all of the spindex factors
-        api_response = api_instance.factor_library_spindex_factors_get()
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    try:
-
-        # Query the API to get the uncertain spindex factor
-        api_response = api_instance.factor_library_spindex_factors_get(
-            spindex_id=spindex_id
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1199,11 +501,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FactorLibrarySpindexFactors**](FactorLibrarySpindexFactors.md)
+[**MappingSpindexFactorsModel**](MappingSpindexFactorsModel.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1211,100 +513,44 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **factor_library_compass_questions_get**
-> FactorLibraryCompassQuestions factor_library_compass_questions_get(question_id=question_id)
 
-Get a list and description of the questions in the COMPASS PDF report.
+# **get_compass_questions**
+> MappingCompassQuestionsModel get_compass_questions(question_id=question_id)
+
+MappingCompassQuestions
+
+Delivers descriptions of COMPASS Explorer questions
 
 ### Example
 
-This API allows you to retrieve the list of compass questions. Optionally, you can filter to a single question as well. An example is shown below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+response = client.get_compass_questions()
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    question_id = 1 # int | Question number 1 - 18 (optional)
-
-    try:
-
-        # Query the API to get all questions
-        api_response = api_instance.factor_library_compass_questions_get()
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    try:
-
-        # Query the API to only get question 1
-        api_response = api_instance.factor_library_compass_questions_get(question_id=question_id)
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
+print(response)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1312,11 +558,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FactorLibraryCompassQuestions**](FactorLibraryCompassQuestions.md)
+[**MappingCompassQuestionsModel**](MappingCompassQuestionsModel.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1324,215 +570,358 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **company_mapping_company_to_security_get**
-> CompanyMappingCompanyToSecurity company_mapping_company_to_security_get(ticker=ticker, cik=cik, body=body)
+# **get_spinsights_explorer_spindex_summary**
+> GenerativeCompanySpinsightsExplorerModel get_spinsights_explorer_spindex_summary(ticker)
 
-Get the ticker, CIK and company name by providing a ticker or CIK identifier.
+GetSpinsightsExplorerSpindexSummary
+
+Get the most recent generative SPINSIGHTS Explorer data for a company. This content explains the underlying drivers of the 9 SPINDEX Factors.
 
 ### Example
 
-This API allows us to get the company name, ticker and CIK identifiers for a company by supplying either a ticker or CIK. An example is shown below:
+* Bearer Authentication (bearer):
+
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+ticker = 'TSLA'
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
+response = client.get_spinsights_explorer_spindex_summary(ticker)
 
-with alphaiq_sdk.ApiClient(configuration) as api_client:
+print(response)
 
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
-
-# Enter a context with an instance of the API client
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-    ticker = 'TSLA' # str |  (optional)
-    cik = '0001318605' # str |  (optional)
-    body = '' # str |  (optional)
-
-    try:
-
-        # Query the company to security API with a ticker
-        api_response = api_instance.company_mapping_company_to_security_get(
-            ticker=ticker,
-            body=body
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-    try:
-
-        # Query the company to security API with a CIK instead and do not provide a body
-        api_response = api_instance.company_mapping_company_to_security_get(
-            cik=cik
-            )
-        print(api_response)
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ticker** | **str**|  | [optional] 
- **cik** | **str**|  | [optional] 
- **body** | **str**|  | [optional] 
+ **ticker** | **str**| Ticker identifier corresponding to a security or company | 
 
 ### Return type
 
-[**CompanyMappingCompanyToSecurity**](CompanyMappingCompanyToSecurity.md)
+[**GenerativeCompanySpinsightsExplorerModel**](GenerativeCompanySpinsightsExplorerModel.md)
 
 ### Authorization
 
-[bearer via /auth/gettoken API](#auth_gettoken_post)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: text/plain
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **auth_gettoken_post**
-> CompanyCompassReport auth_gettoken_post(content_type, inline_object=inline_object)
+# **get_spinsights_report_content**
+> GenerativeCompanySpinsightsReportContentModel get_spinsights_report_content(ticker)
 
-Get a bearer token with username and base64_encoded password  
+GetSpinsightsReportContent
+
+Get the most recent SPINSIGHTS report content for a company. This report content specifically highlights the company's language which is more prominent than peers.  Note: the \"SPINDEX Summary\" is present in this report endpoint but not the GetCompassReportContent. This should avoid duplicate information.
 
 ### Example
 
-Most API routes are authenticated via a bearer token. This API allows you to retrieve this token using your email and password. The example below demonstrates this process:
+* Bearer Authentication (bearer):
 
 ```python
 import os
-
 from dotenv import load_dotenv
 import alphaiq_sdk
-from alphaiq_sdk.rest import ApiException
 
 # Load the environment variables from the .env file
 load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+ticker = 'TSLA'
 
-# Define the API configuration, client object and API instance
-configuration = alphaiq_sdk.Configuration(
-    host = 'https://data.app.alphaiq.ai/api/v1'
-    )
+response = client.get_spinsights_report_content(ticker)
 
-with alphaiq_sdk.ApiClient(configuration) as api_client:
-
-    # Make an instance of the API class
-    api_instance = alphaiq_sdk.InvestmentResearchersApi(api_client)
-
-    # Define the values needed to authenticate to the API
-    content_type = 'application/json' # str | 
-    inline_object = alphaiq_sdk.InlineObject(
-        email = EMAIL,
-        password = PASSWORD
-    )
-
-    try:
-
-        # Authenticate using your credentials
-        api_response = api_instance.auth_gettoken_post(
-            content_type = content_type,
-            inline_object=inline_object
-            )
-
-    except ApiException as e:
-
-        # Log an exception if it occurs
-        print("Exception when calling the API: %s\n" % e)
-
-    # Extract your bearer token for authentication to other API paths
-    id_token = api_response.data.id_token
-
-    # Add the bearer token to the configuration for authenticating other routes
-    setattr(configuration, 'access_token', id_token)
+print(response)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_type** | **str**|  | 
- **inline_object** | [**InlineObject**](InlineObject.md)|  | [optional] 
+ **ticker** | **str**|  | 
 
 ### Return type
 
-[**CompanyCompassReport**](CompanyCompassReport.md)
+[**GenerativeCompanySpinsightsReportContentModel**](GenerativeCompanySpinsightsReportContentModel.md)
 
 ### Authorization
 
-See above code example.
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+# **get_spinsights_report_pdf**
+> FileDownloadModel get_spinsights_report_pdf(ticker)
+
+SpinsightsReportPDF
+
+Get pre-signed URL for a company's generative SPINSIGHTS PDF report
+
+### Example
+
+* Bearer Authentication (bearer):
+
+```python
+import os
+from dotenv import load_dotenv
+import alphaiq_sdk
+
+# Load the environment variables from the .env file
+load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
+ticker = 'TSLA'
+
+response = client.get_spinsights_report_pdf(ticker)
+print(response)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticker** | **str**| Ticker identifier corresponding to a security or company | 
+
+### Return type
+
+[**FileDownloadModel**](FileDownloadModel.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_compass_explorer_question_answer**
+> GenerativeCompanyQuestionAnswerModel get_compass_explorer_question_answer(ticker)
+
+GetCompassExplorerQuestionAnswer
+
+Get the COMPASS Explorer Question & Answer results.
+
+### Example
+
+* Bearer Authentication (bearer):
+
+```python
+import os
+from dotenv import load_dotenv
+import alphaiq_sdk
+
+# Load the environment variables from the .env file
+load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
+
+ticker = 'TSLA'
+
+response = client.get_compass_explorer_question_answer(ticker)
+
+print(response)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticker** | **str**|  | 
+
+### Return type
+
+[**GenerativeCompanyQuestionAnswerModel**](GenerativeCompanyQuestionAnswerModel.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_compass_report_content**
+> GenerativeCompanyCompassReportContentModel get_compass_report_content(ticker)
+
+GetCompassReportContent
+
+
+
+### Example
+
+* Bearer Authentication (bearer):
+
+```python
+import os
+from dotenv import load_dotenv
+import alphaiq_sdk
+
+# Load the environment variables from the .env file
+load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
+
+ticker = 'TSLA'
+
+response = client.get_compass_report_content(ticker)
+
+print(response)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticker** | **str**|  | 
+
+### Return type
+
+[**GenerativeCompanyCompassReportContentModel**](GenerativeCompanyCompassReportContentModel.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_compass_report_pdf**
+> FileDownloadModel get_compass_report_pdf(ticker)
+
+CompassReportPDF
+
+Get pre-signed URL for a company's generative COMPASS PDF report
+
+### Example
+
+* Bearer Authentication (bearer):
+
+```python
+import os
+from dotenv import load_dotenv
+import alphaiq_sdk
+
+# Load the environment variables from the .env file
+load_dotenv()
+APIKEY = os.getenv('APIKEY')
+client = alphaiq_sdk.client(APIKEY)
+
+ticker = 'TSLA'
+
+response = client.get_compass_report_pdf(ticker)
+
+print(response)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticker** | **str**| Ticker identifier corresponding to a security or company | 
+
+### Return type
+
+[**FileDownloadModel**](FileDownloadModel.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

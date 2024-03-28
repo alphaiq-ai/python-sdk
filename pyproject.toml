@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "alphaiq-sdk"
-version = "0.2.5"
+version = "0.2.6"
 description = "Access AlphaIQ quantitative linguistics signals and generative content"
 readme = "README.md"
 authors = [{ name = "AlphaIQ", email = "contact@alphaiq.ai" }]
@@ -14,7 +14,7 @@ authors = [{ name = "AlphaIQ", email = "contact@alphaiq.ai" }]
 classifiers = [
     "Programming Language :: Python",
 ]
-keywords = ["risk", "AI", "fintech", "investing","NLP"]
+keywords = ["risk", "AI", "fintech", "investing","NLP", "GenAI"]
 dependencies = [
     "certifi >= 14.05.14",
     "six >= 1.10",
