@@ -21,7 +21,7 @@ class Generative:
 
     def get_spinsights_report_pdf(self, ticker: str):
 
-        url = self.host_url + f"/company/spinsights/reportPDF/{ticker}"
+        url = self.host_url + f"/pdf/spinsights/{ticker}"
 
         response = requests.get(url, headers=self.headers).json()
         return response 
@@ -42,7 +42,7 @@ class Generative:
     
     def get_compass_report_pdf(self, ticker: str):
 
-        url = self.host_url + f"/company/compass/reportPDF/{ticker}"
+        url = self.host_url + f"/pdf/compass/{ticker}"
 
         response = requests.get(url, headers=self.headers).json()
         return response 

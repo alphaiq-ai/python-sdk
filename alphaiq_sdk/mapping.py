@@ -13,7 +13,10 @@ class Mapping:
             'lei': kwargs.get('lei', None),
             'isin': kwargs.get('isin', None),
             'cusip': kwargs.get('cusip', None),
-            'sedol': kwargs.get('sedol', None)
+            'sedol': kwargs.get('sedol', None),
+            'figi': kwargs.get('figi',None),
+            'compositeFigi': kwargs.get('compositeFigi',None),
+            'shareClassFigi': kwargs.get('shareClassFigi',None)
         }
 
         # Checking if at least one optional argument is present
