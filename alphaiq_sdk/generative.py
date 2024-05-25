@@ -12,14 +12,14 @@ class Generative:
         response = requests.get(url, headers=self.headers).json()
         return response
 
-    def get_compass_explorer_question_answer(self, ticker: str):
+    def get_question_answer(self, ticker: str):
 
         url = self.host_url + f"/generative/company/compass/questionContent/{ticker}"
 
         response = requests.get(url, headers=self.headers).json()
         return response 
 
-    def get_compass_report_content(self, ticker: str):
+    def get_trending_content(self, ticker: str):
 
         url = self.host_url + f"/generative/company/compass/reportContent/{ticker}"
 
