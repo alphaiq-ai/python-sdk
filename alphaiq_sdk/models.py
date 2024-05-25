@@ -5,7 +5,7 @@ class Models:
         self.host_url = host_url
         self.headers = headers
 
-    def get_models_spindex(self, modelVariation: str, startDate: str, endDate: str, **kwargs):
+    def get_models_corporate_transparency(self, modelVariation: str, startDate: str, endDate: str, **kwargs):
         optional_args = {
             'consilience_id': kwargs.get('consilience_id', None),
             'ticker': kwargs.get('ticker', None),
