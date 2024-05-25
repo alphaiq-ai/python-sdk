@@ -5,26 +5,12 @@ class Generative:
         self.host_url = host_url
         self.headers = headers
 
-    def get_spinsights_explorer_spindex_summary(self, ticker: str):
+    def get_signal_explanations(self, ticker: str):
 
-        url = self.host_url + f"/generative/company/spinsights/explorerContent/{ticker}"
+        url = self.host_url + f"/generative/company/signal_explanation/{ticker}"
 
         response = requests.get(url, headers=self.headers).json()
         return response
-     
-    def get_spinsights_report_content(self, ticker: str):
-
-        url = self.host_url + f"/generative/company/spinsights/reportContent/{ticker}"
-
-        response = requests.get(url, headers=self.headers).json()
-        return response 
-
-    def get_spinsights_report_pdf(self, ticker: str):
-
-        url = self.host_url + f"/pdf/spinsights/{ticker}"
-
-        response = requests.get(url, headers=self.headers).json()
-        return response 
 
     def get_compass_explorer_question_answer(self, ticker: str):
 

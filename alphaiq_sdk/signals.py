@@ -5,15 +5,14 @@ class Signals:
         self.host_url = host_url
         self.headers = headers
 
-    def get_quant_linguistics_signals(self, startDate: str, endDate: str, **kwargs):
+    def get_quant_linguistics_signals(self, signalVariation: str, startDate: str, endDate: str, **kwargs):
         optional_args = {
             'consilienceId': kwargs.get('consilience_id', None),
             'ticker': kwargs.get('ticker', None),
             'cik': kwargs.get('cik', None),
             'lei': kwargs.get('lei', None),
             'isin': kwargs.get('isin', None),
-            'cusip': kwargs.get('cusip', None),
-            'sedol': kwargs.get('sedol', None)
+            'cusip': kwargs.get('cusip', None)
         }
 
         # Checking if at least one optional argument is present
@@ -28,21 +27,21 @@ class Signals:
                 url += f"{key}={value}&"
 
         # Adding mandatory arguments to the URL
-        url += f"startDate={startDate}&endDate={endDate}"
+        url += f"signalVariation={signalVariation}&startDate={startDate}&endDate={endDate}"
 
         response = requests.get(url, headers=self.headers).json()
         return response
     
-    def get_bulk_signals(self, strategyType: str):
+    def get_bulk_signals_all(self):
 
-        url = self.host_url + f"/bulk/signals?strategyType={strategyType}"
+        url = self.host_url + f"/bulk/signals/all"
 
         response = requests.get(url, headers=self.headers).json()
         return response
     
-    def get_bulk_signals_yearly(self, strategyType: str, alphaHorizon: str, year: int):
+    def get_bulk_signals_top_level(self):
 
-        url = self.host_url + f"/bulk/signals/yearly?strategyType={strategyType}&alphaHorizon={alphaHorizon}&year={year}"
+        url = self.host_url + f"/bulk/signals/topLevel"
 
         response = requests.get(url, headers=self.headers).json()
         return response

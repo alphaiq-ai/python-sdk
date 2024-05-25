@@ -6,8 +6,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "alphaiq-sdk"
-version = "0.2.6"
-description = "Access AlphaIQ quantitative linguistics signals and generative content"
+version = "0.2.8"
+description = "Access AlphaIQ's generative insights, explainable investment signals, and the Corporate Transparency Score model"
 readme = "README.md"
 authors = [{ name = "AlphaIQ", email = "contact@alphaiq.ai" }]
 
