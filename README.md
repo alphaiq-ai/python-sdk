@@ -82,8 +82,8 @@ All URIs are relative to *https://data.app.alphaiq.ai/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_signal_explanations**](docs/InvestmentResearchersApi.md#get_signal_explanations) | **GET** /generative/company/signal_explanation/{ticker} | GetSignalExplanations
-[**get_question_answer**](docs/InvestmentResearchersApi.md#get_question_answer) | **GET** /generative/company/compass/questionContent/{ticker} | GetQuestionAnswer
 [**get_trending_content**](docs/InvestmentResearchersApi.md#get_trending_content) | **GET** /generative/company/compass/reportContent/{ticker} | GetTrendingGenerative
+[**get_question_answer**](docs/InvestmentResearchersApi.md#get_question_answer) | **GET** /generative/company/compass/questionContent/{ticker} | GetQuestionAnswer
 [**get_compass_report_pdf**](docs/InvestmentResearchersApi.md#get_compass_report_pdf) | **GET** /company/compass/reportPDF/{ticker} | CompassReportPDF
 [**get_quant_linguistics_signals**](docs/InvestmentResearchersApi.md#get_quant_linguistics_signals) | **GET** /signals/quantLinguistics | SignalsQuantLinguistics
 [**get_bulk_signals_all**](docs/InvestmentResearchersApi.md#get_bulk_signals_all) | **GET** /bulk/signals/all | BulkFileSignalsAll
