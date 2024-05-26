@@ -66,10 +66,11 @@ client = alphaiq_sdk.client(APIKEY)
 def get_quant_linguistics_signals():
     client = alphaiq_sdk.client(APIKEY)
     ticker='TSLA'
+    signalVariation='CHANGE'
     startDate='2023-03-01'
     endDate='2023-05-01'
 
-    response = client.get_quant_linguistics_signals(startDate,endDate,ticker=ticker)
+    response = client.get_quant_linguistics_signals(signalVariation,startDate,endDate,ticker=ticker)
 
     return response
 ```
@@ -80,7 +81,7 @@ All URIs are relative to *https://data.app.alphaiq.ai/api/v1/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_signal_explanation**](docs/InvestmentResearchersApi.md#get_signal_explanation) | **GET** /generative/company/signal_explanation/{ticker} | GetSignalExplanations
+[**get_signal_explanations**](docs/InvestmentResearchersApi.md#get_signal_explanation) | **GET** /generative/company/signal_explanation/{ticker} | GetSignalExplanations
 [**get_question_answer**](docs/InvestmentResearchersApi.md#get_question_answer) | **GET** /generative/company/compass/questionContent/{ticker} | GetQuestionAnswer
 [**get_trending_content**](docs/InvestmentResearchersApi.md#get_trending_content) | **GET** /generative/company/compass/reportContent/{ticker} | GetTrendingGenerative
 [**get_compass_report_pdf**](docs/InvestmentResearchersApi.md#get_compass_report_pdf) | **GET** /company/compass/reportPDF/{ticker} | CompassReportPDF
