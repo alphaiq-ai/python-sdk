@@ -1,9 +1,9 @@
 # AlphaIQ Python SDK
-To get access to the API, [sign up here](https://alphaiq.ai).
+To get access to the API, [sign up here for a free Demo](https://consilience.ai/get-started).
 
 Welcome to the AlphaIQ API! We offer Quantitative Linguistic Risk Indicators that enable investors to uncover hidden risks in forward-looking statements from management.
 
-To learn more about AlphaIQ, [read about us](https://alphaiq.ai/about-faq).
+To learn more about AlphaIQ, [read our blog](https://consilience.ai/blog).
 
 Review the [Privacy Policy](https://alphaiq.ai/privacy-policy/) and [Terms of Service](https://alphaiq.ai/terms-of-service/) on our website.
 
@@ -80,48 +80,36 @@ All URIs are relative to *https://data.app.alphaiq.ai/api/v1/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_signal_explanation**](docs/InvestmentResearchersApi.md#get_signal_explanation) | **GET** /generative/company/signal_explanation/{ticker} | GetSignalExplanations
+[**get_question_answer**](docs/InvestmentResearchersApi.md#get_question_answer) | **GET** /generative/company/compass/questionContent/{ticker} | GetQuestionAnswer
+[**get_trending_content**](docs/InvestmentResearchersApi.md#get_trending_content) | **GET** /generative/company/compass/reportContent/{ticker} | GetTrendingGenerative
+[**get_compass_report_pdf**](docs/InvestmentResearchersApi.md#get_compass_report_pdf) | **GET** /company/compass/reportPDF/{ticker} | CompassReportPDF
 [**get_quant_linguistics_signals**](docs/InvestmentResearchersApi.md#get_quant_linguistics_signals) | **GET** /signals/quantLinguistics | SignalsQuantLinguistics
-[**get_bulk_signals**](docs/InvestmentResearchersApi.md#get_bulk_signals) | **GET** /bulk/signals | BulkFileSignals
-[**get_bulk_signals_yearly**](docs/InvestmentResearchersApi.md#get_bulk_signals_yearly) | **GET** /bulk/signals/yearly | BulkFileSignalsYearly
-[**get_models_spindex**](docs/InvestmentResearchersApi.md#get_models_spindex) | **GET** /models/spindex | ModelsSpindex
+[**get_bulk_signals_all**](docs/InvestmentResearchersApi.md#get_bulk_signals_all) | **GET** /bulk/signals/all | BulkFileSignalsAll
+[**get_bulk_signals_top_level**](docs/InvestmentResearchersApi.md#get_bulk_signals_top_level) | **GET** /bulk/signals/topLevel | BulkFileSignalsTopLevel
+[**get_models_corporate_transparency**](docs/InvestmentResearchersApi.md#get_models_corporate_transparency) | **GET** /models/corporateTransparency | ModelsCorporateTransparency
 [**get_bulk_model**](docs/InvestmentResearchersApi.md#get_bulk_model) | **GET** /bulk/models | BulkFileModels
 [**get_company_identifiers**](docs/InvestmentResearchersApi.md#get_company_identifiers) | **GET** /mapping/companyIdentifierMapping | MappingCompanyIdentifiers
-[**get_compass_questions**](docs/InvestmentResearchersApi.md#get_compass_questions) | **GET** /mapping/compassQuestions | MappingCompassQuestions
-[**get_spindex_factors**](docs/InvestmentResearchersApi.md#get_spindex_factors) | **GET** /mapping/spindexFactors | MappingSpindexFactors
 [**get_bulk_mapping**](docs/InvestmentResearchersApi.md#get_bulk_mapping) | **GET** /bulk/mapping | BulkFileMapping
-[**get_spinsights_explorer_spindex_summary**](docs/InvestmentResearchersApi.md#get_spinsights_explorer_spindex_summary) | **GET** /generative/company/spinsights/explorerContent/{ticker} | GetSpinsightsExplorerSpindexSummary
-[**get_spinsights_report_content**](docs/InvestmentResearchersApi.md#get_spinsights_report_content) | **GET** /generative/company/spinsights/reportContent/{ticker} | GetSpinsightsReportContent
-[**get_spinsights_report_pdf**](docs/InvestmentResearchersApi.md#get_spinsights_report_pdf) | **GET** /company/spinsights/reportPDF/{ticker} | SpinsightsReportPDF
-[**get_compass_explorer_question_answer**](docs/InvestmentResearchersApi.md#get_compass_explorer_question_answer) | **GET** /generative/company/compass/questionContent/{ticker} | GetCompassExplorerQuestionAnswer
-[**get_compass_report_content**](docs/InvestmentResearchersApi.md#get_compass_report_content) | **GET** /generative/company/compass/reportContent/{ticker} | GetCompassReportContent
-[**get_compass_report_pdf**](docs/InvestmentResearchersApi.md#get_compass_report_pdf) | **GET** /company/compass/reportPDF/{ticker} | CompassReportPDF
+
 
 ## Documentation For Models
 
  - [CompanyInfoModel](docs/CompanyInfoModel.md)
  - [CompanyInfoModel1](docs/CompanyInfoModel1.md)
- - [FactorLibrarySpindexFactorsDataItems](docs/FactorLibrarySpindexFactorsDataItems.md)
  - [FileDownloadModel](docs/FileDownloadModel.md)
  - [FileDownloadModel1](docs/FileDownloadModel1.md)
  - [FileDownloadModelData](docs/FileDownloadModelData.md)
  - [FileDownloadModelData1](docs/FileDownloadModelData1.md)
+ - [GenerativeSignalExplanationModel](docs/GenerativeSignalExplanationModel.md)
  - [GenerativeCompanyCompassReportContentModel](docs/GenerativeCompanyCompassReportContentModel.md)
  - [GenerativeCompanyCompassReportContentModelData](docs/GenerativeCompanyCompassReportContentModelData.md)
  - [GenerativeCompanyCompassReportContentModelDataCompassContent](docs/GenerativeCompanyCompassReportContentModelDataCompassContent.md)
  - [GenerativeCompanyQuestionAnswerModel](docs/GenerativeCompanyQuestionAnswerModel.md)
  - [GenerativeCompanyQuestionAnswerModelData](docs/GenerativeCompanyQuestionAnswerModelData.md)
  - [GenerativeCompanyQuestionAnswerModelDataQuestionAnswerItems](docs/GenerativeCompanyQuestionAnswerModelDataQuestionAnswerItems.md)
- - [GenerativeCompanySpinsightsExplorerModel](docs/GenerativeCompanySpinsightsExplorerModel.md)
- - [GenerativeCompanySpinsightsExplorerModelData](docs/GenerativeCompanySpinsightsExplorerModelData.md)
- - [GenerativeCompanySpinsightsExplorerModelDataSpinsightsExplorerItems](docs/GenerativeCompanySpinsightsExplorerModelDataSpinsightsExplorerItems.md)
- - [GenerativeCompanySpinsightsReportContentModel](docs/GenerativeCompanySpinsightsReportContentModel.md)
- - [GenerativeCompanySpinsightsReportContentModelData](docs/GenerativeCompanySpinsightsReportContentModelData.md)
- - [GenerativeCompanySpinsightsReportContentModelDataSpinsightsContent](docs/GenerativeCompanySpinsightsReportContentModelDataSpinsightsContent.md)
  - [MappingCompanyIdentifierMappingModel](docs/MappingCompanyIdentifierMappingModel.md)
  - [MappingCompanyIdentifierMappingModelDataItems](docs/MappingCompanyIdentifierMappingModelDataItems.md)
- - [MappingCompassQuestionsModel](docs/MappingCompassQuestionsModel.md)
- - [MappingCompassQuestionsModelDataItems](docs/MappingCompassQuestionsModelDataItems.md)
- - [MappingSpindexFactorsModel](docs/MappingSpindexFactorsModel.md)
  - [ModelsSpindexModel](docs/ModelsSpindexModel.md)
  - [ModelsSpindexModelData](docs/ModelsSpindexModelData.md)
  - [ModelsSpindexModelItems](docs/ModelsSpindexModelItems.md)
