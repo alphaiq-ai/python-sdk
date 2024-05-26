@@ -77,7 +77,7 @@ def get_quant_linguistics_signals():
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://data.app.alphaiq.ai/api/v1/*
+All URIs are relative to *https://data.app.alphaiq.ai/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
