@@ -7,8 +7,9 @@ class AlphaIQ(Signals, Models, Mapping, Generative):
 
     def __init__(self, token):
         self.token = token
-        self.host_url = "https://data.app.alphaiq.ai/api/v1"
-        self.headers = {'Authorization': f'Bearer {token}'}
+        # self.host_url = "https://data.app.alphaiq.ai/api/v1"
+        self.host_url = "https://staging.app.alphaiq.ai/api/v1"
+        self.headers = {'Authorization': f'Bearer {token}','Origin':f'{self.host_url}'}
         super().__init__(self.host_url, self.headers)
 
 def client(token):

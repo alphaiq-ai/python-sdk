@@ -32,36 +32,6 @@ class Mapping:
         response = requests.get(url, headers=self.headers).json()
         return response
     
-    def get_spindex_factors_map(self, **kwargs):
-        optional_args = {
-            'spindexId': kwargs.get('spindexId', None)
-        }
-
-        url = self.host_url + "/mapping/spindexFactors?"
-        
-        # Constructing URL based on provided optional arguments
-        for key, value in optional_args.items():
-            if value is not None:
-                url += f"{key}={value}&"
-
-        response = requests.get(url, headers=self.headers).json()
-        return response
-    
-    def get_compass_questions_map(self, **kwargs):
-        optional_args = {
-            'questionId': kwargs.get('questionId', None)
-        }
-
-        url = self.host_url + "/mapping/compassQuestions?"
-        
-        # Constructing URL based on provided optional arguments
-        for key, value in optional_args.items():
-            if value is not None:
-                url += f"{key}={value}&"
-
-        response = requests.get(url, headers=self.headers).json()
-        return response
-    
     def get_bulk_mapping(self):
 
         url = self.host_url + f"/bulk/mapping"
